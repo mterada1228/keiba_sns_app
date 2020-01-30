@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
-    <title>KeibaSns</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/header' %>
   </head>
-
+  
   <body>
+    <%= render 'layouts/sidebar' %>    
     <%= yield %>
   </body>
+
 </html>
