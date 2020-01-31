@@ -1,6 +1,13 @@
 class Menu < ApplicationRecord
   
-  # today_dateの新しい順でソートする
-  default_scope -> { order(today_date: :desc) }
+  # 開催日順にソートして一つ前のMenuを返す
+  def previous
+    Menu.where("today_date < ?",today_date).order("today_date DESC").first
+  end
+
+  # 開催日順にソートして一つ後のMenuを返す
+  def next
+    Menu.where("today_date > ?",today_date).order("today_date ASC").first
+  end
 
 end

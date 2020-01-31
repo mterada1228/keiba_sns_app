@@ -1,9 +1,15 @@
 <div class="col-xs-4">
-  <%= link_to "< 前開催", "#", class: "btn btn-lg btn-primary pull-left" %>
+  <% if @menu.previous %>
+    <%= link_to "< 前開催", menu_path(@menu.previous), class: "btn btn-lg btn-primary pull-left" %>
+  <% end %>
 </div>
+
 <div class="col-xs-4">
   <h2><%= link_to @menu.today_date.strftime("%Y年 %-m月 %-d日"), "#" %></h2>
 </div>
+
 <div class="col-xs-4">
-  <%= link_to "次開催 >", "#", class: "btn btn-lg btn-primary pull-right"%>
+  <% if @menu.next %>
+    <%= link_to "次開催 >", menu_path(@menu.next), class: "btn btn-lg btn-primary pull-right"%>
+  <% end %>
 </div>
