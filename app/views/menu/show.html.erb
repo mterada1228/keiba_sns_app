@@ -1,4 +1,9 @@
-
-
-<h1>Menu#show</h1>
-<p>Find me in app/views/menu/show.html.erb</p>
+<div class="col-xs-4">
+  <%= link_to "< 前開催", "#", class: "btn btn-lg btn-primary pull-left" %>
+</div>
+<div class="col-xs-4">
+  <h2><%= link_to @menu.today_date.strftime("%Y年 %-m月 %-d日"), "#" %></h2>
+</div>
+<div class="col-xs-4">
+  <%= link_to "次開催 >", "#", class: "btn btn-lg btn-primary pull-right"%>
+</div>
