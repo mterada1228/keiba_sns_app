@@ -1,15 +1,43 @@
-<div class="col-xs-4">
-  <% if @menu.previous %>
-    <%= link_to "< 前開催", menu_path(@menu.previous), class: "btn btn-lg btn-primary pull-left" %>
-  <% end %>
+<!-- 開催日選択 -->
+<div class="row">
+
+  <div class="col-xs-4">
+    <% if @menu.previous %>
+      <%= link_to "< 前開催", menu_path(@menu.previous), class: "btn btn-lg btn-primary pull-left" %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-4">
+    <h2><%= link_to @menu.today_date.strftime("%Y年 %-m月 %-d日"), "#" %></h2>
+  </div>
+
+  <div class="col-xs-4">
+    <% if @menu.next %>
+      <%= link_to "次開催 >", menu_path(@menu.next), class: "btn btn-lg btn-primary pull-right"%>
+    <% end %>
+  </div>
+
 </div>
 
-<div class="col-xs-4">
-  <h2><%= link_to @menu.today_date.strftime("%Y年 %-m月 %-d日"), "#" %></h2>
-</div>
+<!-- レース選択 -->
+<div class="row">
 
-<div class="col-xs-4">
-  <% if @menu.next %>
-    <%= link_to "次開催 >", menu_path(@menu.next), class: "btn btn-lg btn-primary pull-right"%>
-  <% end %>
+  <div class="col-xs-4">
+    <% if @menu.today_course[0] %>
+      <%= link_to @menu.today_course[0], "#", class: "btn btn-lg btn-primary w-75 center-block" %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-4">
+    <% if @menu.today_course[1] %>
+      <%= link_to @menu.today_course[1], "#", class: "btn btn-lg btn-primary w-75 center-block" %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-4">
+    <% if @menu.today_course[2] %>
+      <%= link_to @menu.today_course[2], "#", class: "btn btn-lg btn-primary w-75 center-block" %>
+    <% end %>
+  </div>
+
 </div>

@@ -11,5 +11,10 @@ class Menu < ApplicationRecord
   def next
     Menu.where("today_date > ?",today_date).order("today_date ASC").first
   end
+  
+  # 当日開催される場名を取得する
+  def today_course
+    self.races.map(&:place).uniq
+  end
 
 end
