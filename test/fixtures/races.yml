@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  place: 
+  round: 
+  race_name: 
+  cource_type: 
+  cource_length: 
+  hose_name1: 
+  menu_id: 
+
+two:
+  place: 
+  round: 
+  race_name: 
+  cource_type: 
+  cource_length: 
+  hose_name1: 
+  menu_id: 

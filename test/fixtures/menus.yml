@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+latest:
+  today_date: <%= Time.zone.now.tomorrow %>
 
-one:
-  today_date: 
-
-two:
-  today_date: 
+middle:
+  today_date: <%= Time.zone.now %>
+  
+oldest:
+  today_date: <%= Time.zone.now.yesterday %>
