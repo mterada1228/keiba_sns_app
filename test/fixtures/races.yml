@@ -1,21 +1,122 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-race1:
-  place: "東京" 
+race_1:
+  place: "東京"
+  round: 1
+  race_name: "テスト1"
+  cource_type: "芝"
+  cource_length: "1600"
   menu: latest
 
-race2:
+race_2:
   place: "東京"
+  round: 2
+  race_name: "テスト2"
+  cource_type: "芝"
+  cource_length: "1600"
   menu: latest
   
-race3:
+race_3:
   place: "京都"
+  round: 1
+  race_name: "テスト1"
+  cource_type: "芝"
+  cource_length: "1600"
   menu: latest
   
-race4:
+race_4:
   place: "京都"
+  round: 2
+  race_name: "テスト2"
+  cource_type: "芝"
+  cource_length: "1600"
   menu: latest
   
-race5:
+race_5:
   place: "京都"
+  round: 3
+  race_name: "テスト3"
+  cource_type: "芝"
+  cource_length: "1600"
   menu: latest
+  
+race_6:
+  place: "東京"
+  round: 1
+  race_name: "テスト1"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: middle
+
+race_7:
+  place: "東京"
+  round: 2
+  race_name: "テスト2"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: middle
+  
+race_8:
+  place: "京都"
+  round: 1
+  race_name: "テスト1"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: middle
+  
+race_9:
+  place: "京都"
+  round: 2
+  race_name: "テスト2"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: middle
+  
+race_10:
+  place: "京都"
+  round: 3
+  race_name: "テスト3"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: middle
+
+race_11:
+  place: "東京"
+  round: 1
+  race_name: "テスト1"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: oldest
+
+race_12:
+  place: "東京"
+  round: 2
+  race_name: "テスト2"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: oldest
+  
+race_13:
+  place: "京都"
+  round: 1
+  race_name: "テスト1"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: oldest
+  
+race_14:
+  place: "京都"
+  round: 2
+  race_name: "テスト2"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: oldest
+  
+race_15:
+  place: "京都"
+  round: 3
+  race_name: "テスト3"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: oldest
+  

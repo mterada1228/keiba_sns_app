@@ -16,7 +16,7 @@ class MenuControllerTest < ActionDispatch::IntegrationTest
   
   # 場名を入力して想定通りのレースが取得できる事
   test "場名を入力してレースが取得できる事" do
-    get menu_path(@latest, course_name: "京都")
+    get menu_path(@latest, course_name: "京都", round: 1)
     assert_response :success
     assert_equal 3, assigns(:races).count
   end
