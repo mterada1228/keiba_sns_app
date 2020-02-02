@@ -19,25 +19,40 @@
 
 </div>
 
-<!-- レース選択 -->
+<!-- 場名選択 -->
 <div class="row">
 
   <div class="col-xs-4">
+    
     <% if @menu.today_course[0] %>
-      <%= link_to @menu.today_course[0], "#", class: "btn btn-lg btn-primary w-75 center-block" %>
+      <%= link_to @menu.today_course[0], menu_path(@menu, course_name: @menu.today_course[0], round: 1), class: "btn btn-lg btn-primary w-75 center-block" %>
     <% end %>
+    
   </div>
 
   <div class="col-xs-4">
     <% if @menu.today_course[1] %>
-      <%= link_to @menu.today_course[1], "#", class: "btn btn-lg btn-primary w-75 center-block" %>
+      <%= link_to @menu.today_course[1], menu_path(@menu, course_name: @menu.today_course[1], round: 1), class: "btn btn-lg btn-primary w-75 center-block" %>
     <% end %>
   </div>
 
   <div class="col-xs-4">
     <% if @menu.today_course[2] %>
-      <%= link_to @menu.today_course[2], "#", class: "btn btn-lg btn-primary w-75 center-block" %>
+      <%= link_to @menu.today_course[2], menu_path(@menu, course_name: @menu.today_course[2], round: 1), class: "btn btn-lg btn-primary w-75 center-block" %>
     <% end %>
   </div>
-
 </div>
+
+<!-- レース選択 -->
+<div id="race_round" class="row" style="padding-top: 20px;">
+  <% @races.each do |race| %>
+    <div class="col-xs-1" style="padding: 1px">
+      <%= link_to "#{race.round} R", menu_path(@menu, course_name: race.place, round: race.round), class: "btn btn-lg btn-primary center-block w-100" %>
+    </div>
+  <% end %>
+</div>
+
+<!-- レース情報 -->
+<h1><%= @race.race_name %></h1>
+
+

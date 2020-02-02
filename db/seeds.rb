@@ -58,8 +58,8 @@ menus = Menu.all
     hose_name18: hose_name18) }
 end
 
-# 11R分やる(京都)
-11.times do |n|
+# 10R分やる(京都)
+10.times do |n|
   place = "京都"
   race_name = "レース_#{n+1}"
   round = n+1
@@ -109,8 +109,8 @@ end
     hose_name18: hose_name18) }
 end
 
-# 11R分やる(小倉)
-11.times do |n|
+# 9R分やる(小倉)
+9.times do |n|
   place = "小倉"
   round = n+1
   race_name = "レース_#{n+1}"

@@ -16,5 +16,15 @@ class Menu < ApplicationRecord
   def today_course
     self.races.map(&:place).uniq
   end
+  
+  # 当日の引数で与えられた場名のレース一覧を取得する
+  def today_selected_course_race(course_name)
+    self.races.where(place: course_name)
+  end
 
+  # 当日の引数で与えられた場名、ラウンドのレースを取得する
+  def get_race(course_name, round)
+    self.races.where(place: course_name, round: round).first
+  end
+  
 end
