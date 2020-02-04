@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
+      # TODO 成功時の処理をかく
+      # ①ログインする
+      # ②一つ前にいたページに戻る。
     else
       render 'new'
     end

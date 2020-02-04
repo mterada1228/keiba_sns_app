@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     # Userの存在性 & パスワードの一致を確認する
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
-      redirect_back_or @user
+      redirect_to root_path
     else
       # flashだとリダイレクトしないと消滅しないが、flash.nowはrenderでも消滅する
       flash.now[:danger] = '登録されていないメールアドレス、またはパスワードが一致しません'
