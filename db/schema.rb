@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200202231926) do
+ActiveRecord::Schema.define(version: 20200205212217) do
 
   create_table "menus", force: :cascade do |t|
     t.date "today_date"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20200202231926) do
     t.string "activate_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
   end
 
 end

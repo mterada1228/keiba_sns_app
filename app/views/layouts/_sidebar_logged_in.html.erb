@@ -2,8 +2,7 @@
   <ul class="nav nav-pills nav-stacked">
     <li class="sidebar">
       <div class="sidebar_avatars">
-        <!-- TODO ログインユーザのアバターが表示できるように変更 -->
-        <%= link_to image_tag("terada_kokoro.jpg", alt: "Rails logo"), '#' %>
+        <%= image_tag current_user.picture.url if current_user.picture? %>
       </div>
     </li>
     <li class="center">

@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # TODO 成功時の処理をかく
-      # ①ログインする
-      # ②一つ前にいたページに戻る。
+      # TODO 一つ前にいたページに戻れるようにする
+      log_in @user
+      redirect_to root_path
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     # Userのstrong parameter(form入力可能なパラメータを定義)
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :picture)
     end
   
 end
