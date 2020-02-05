@@ -9,7 +9,11 @@
   <body>
     <div class="container">
      <div class="row"; width=100%;>
-        <%= render 'layouts/sidebar' %>
+      <% if logged_in? %>
+        <%= render 'layouts/sidebar_logged_in' %>
+      <% else %>
+        <%= render 'layouts/sidebar_logged_out' %>
+      <% end %>
         <div class="col-xs-9">
           <%= yield %>
         </div>

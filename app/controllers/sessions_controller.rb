@@ -18,5 +18,11 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
+  
+  # DELETE /logout
+  def destroy
+    log_out if logged_in? # session インスタンスを破棄する
+    redirect_to root_url
+  end
 
 end

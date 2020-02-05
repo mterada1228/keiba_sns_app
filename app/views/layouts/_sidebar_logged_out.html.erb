@@ -1,0 +1,16 @@
+<div class="col-xs-3" style="background-color:#F0F3F5;">
+  <ul class="nav nav-pills nav-stacked">
+    <li class="sidebar">
+      <div class="sidebar_avatars">
+        <%= image_tag "avatardefault.png" %>
+      </div>
+    </li>
+    <li class="center">
+      ゲストさん
+    </li>
+    <li>
+      <!-- TODO ログインしていない場合、エラーメッセージを出してmenu画面に遷移する -->
+      <%= link_to "レースを予想する", "#", class: "btn btn-lg btn-primary", style: "margin-bottom: 180px;" %>
+    </li>
+  </ul>
+</div>
