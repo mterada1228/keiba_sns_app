@@ -8,9 +8,7 @@ if Rails.env.production?
       :aws_secret_access_key => ENV['S3_SECRET_KEY']
     }
     config.fog_directory     =  ENV['S3_BUCKET']
-    
-  config.fog_directory  = ENV['S3_BUCKET']
-  config.asset_host = 'https://s3-ap-northeast1.amazonaws.com/' + ENV['S3_BUCKET']
-  config.asset_host = 'https://' + ENV['S3_BUCKET'] + '.s3.amazonaws.com'
+    # 画像のエンドポイントを設定（defaultではhtpps://〜だが、http://〜に変更。）（謎）
+    config.asset_host = 'http://' + ENV['S3_BUCKET'] + '.s3.amazonaws.com'
   end
 end
