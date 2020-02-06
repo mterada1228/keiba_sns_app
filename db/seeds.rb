@@ -5,6 +5,22 @@ Menu.create!(today_date: '2019-12-31')
 Menu.create!(today_date: '2020-01-01')
 Menu.create!(today_date: '2020-01-02')
 
+# 開発機向けにユーザを生成
+User.create!(name:  "test1",
+             email: "test1@co.jp",
+             password:              "aaaaaa",
+             password_confirmation: "aaaaaa")
+
+User.create!(name:  "test2",
+             email: "test2@co.jp",
+             password:              "aaaaaa",
+             password_confirmation: "aaaaaa")
+
+User.create!(name:  "test3",
+             email: "test3@co.jp",
+             password:              "aaaaaa",
+             password_confirmation: "aaaaaa")
+
 # 開発環境むけにRaceを生成
 menus = Menu.all
 # 11R分やる(東京)
@@ -158,4 +174,18 @@ end
     hose_name16: hose_name16,
     hose_name17: hose_name17,
     hose_name18: hose_name18) }
+end
+
+# 開発機向けにマイクロポストを生成
+users = User.all
+races = Race.all
+
+5.times do |n|
+  content = "予想#{n+1}"
+  races.each do |race|
+    users.each { |user| user.microposts.create!(
+      content: content,
+      race_id: race.id
+    )}
+  end
 end

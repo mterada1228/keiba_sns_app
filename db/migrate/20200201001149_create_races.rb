@@ -25,7 +25,7 @@ class CreateRaces < ActiveRecord::Migration[5.1]
       t.string :hose_name16
       t.string :hose_name17
       t.string :hose_name18
-      t.integer :menu_id
+      t.references :menu, foreign_key: true
 
       t.timestamps
     end

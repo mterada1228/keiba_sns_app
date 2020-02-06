@@ -1,3 +1,5 @@
 class Race < ApplicationRecord
-   belongs_to :menu
+  # 依存関係
+  belongs_to :menu
+  has_many :microposts, dependent: :destroy
 end

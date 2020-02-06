@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20200206125824) do
     t.integer "menu_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_races_on_menu_id"
   end
 
   create_table "users", force: :cascade do |t|
