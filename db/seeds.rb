@@ -181,10 +181,9 @@ users = User.all
 races = Race.all
 
 5.times do |n|
-  content = "予想#{n+1}"
   races.each do |race|
     users.each { |user| user.microposts.create!(
-      content: content,
+      content: "予想#{n+1} 場所: #{race.place} ラウンド: #{race.round}",
       race_id: race.id
     )}
   end

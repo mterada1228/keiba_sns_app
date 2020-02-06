@@ -19,6 +19,12 @@ class MenuControllerTest < ActionDispatch::IntegrationTest
     get menu_path(@latest, course_name: "京都", round: 1)
     assert_response :success
     assert_equal 3, assigns(:races).count
+    assert_equal "京都", assigns(:race).place
+    assert_equal 1, assigns(:race).round
+    microposts = assigns(:microposts)
+    microposts.each do |micropost|
+      assert_equal micropost.race_id, assigns(:race).id
+    end
   end
   
 end

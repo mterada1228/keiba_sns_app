@@ -3,15 +3,20 @@ require 'test_helper'
 class MenuShowTest < ActionDispatch::IntegrationTest
   
   def setup
+    # menus
     @latest = menus(:latest)
     @middle = menus(:middle)
     @oldest = menus(:oldest)
+    # users
+    @user = users(:michael) 
   end
-  
+
   test "ヘッダーが予想通りである事" do
     get menu_path(@latest)
     assert_select "a[href=?]", root_path
-    # TODO 会員登録、会員検索を実装したらテストを書く
+    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", signup_path
+    # TODO 会員検索を実装したらテストを書く
   end
   
   test "開催日エリアのテスト" do
