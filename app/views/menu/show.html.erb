@@ -60,11 +60,17 @@
   <h1><%= @race.race_name %> <%= @race.cource_type %> <%= @race.cource_length %>m</h1>
 </div>
 
-<!-- マイクロポストの表示 -->
-<% if @race.microposts.any? %>
-  <%= will_paginate @microposts %>
-  <ol class="microposts">
-    <%= render @microposts %>
-  </ol>
+<% if posting_mode %>
+  <!-- マイクロポスト投稿モード -->
+  現在は投稿モードです。
+<% else %> 
+  <!-- マイクロポスト閲覧モード -->
+  <% if @race.microposts.any? %>
+    <%= will_paginate @microposts %>
+    <ol class="microposts">
+      <%= render @microposts %>
+    </ol>
+  <% end %>
 <% end %>
+  
 

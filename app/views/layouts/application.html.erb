@@ -15,6 +15,10 @@
         <%= render 'layouts/sidebar_logged_out' %>
       <% end %>
         <div class="col-xs-9">
+          <!--遷移前から渡されたflash変数の表示-->
+          <% flash.each do |message_type, message| %>
+            <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+          <% end %>
           <%= yield %>
         </div>
       </div>
