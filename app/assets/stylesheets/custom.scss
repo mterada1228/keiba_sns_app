@@ -374,3 +374,13 @@ tr.gate_pink td {
   z-index: 2  /* 「オーバーレのHTML要素」よりもスタックレベルを高くする */
 }
 
+.modal_select_baken {
+  width: 500px;
+  height: 350px;
+  position: fixed; /* viewpointを相対位置にする */
+  border: 2px solid #D04255;
+  background-color: #FFF;
+  display: none; 
+  z-index: 3  /* 「オーバーレのHTML要素」よりもスタックレベルを高くする */
+}
+

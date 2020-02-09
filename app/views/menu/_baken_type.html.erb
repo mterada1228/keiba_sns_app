@@ -53,12 +53,35 @@
 
 <button type="button" id="close" class="btn btn-primary center-block">戻る</button>
 
-<div id="output"></div>
+<!-- モーダルウインドウで買い目入力 -->
+<div id="modalWindow_tansho" class="modal_select_baken">  
+  単勝
+</div>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    $("#tansyo").on('click', function () {
-      $("#output").html("リンク1がクリックされました。");
-    });
-  })
+  $(function() {
+    $(document).ready(function () {
+      // 単勝
+      $("#tansyo").on('click', function () {
+        $('#modalWindow_tansho').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // TODO 他買い目のをかく
+    })
+    
+    // モーダルウィンドウを中央配置するための配置場所を計算する関数
+    function locateCenter() {
+      let w = $(window).width();
+      let h = $(window).height();
+    
+      let cw = $('#modalWindow_tansho').outerWidth();
+      let ch = $('#modalWindow_tansho').outerHeight();
+   
+      $('#modalWindow_tansho').css({
+        'left': ((w - cw) / 2) + 'px',
+        'top': ((h - ch) / 2) + 'px'
+      });
+    }
+  });
 </script>
