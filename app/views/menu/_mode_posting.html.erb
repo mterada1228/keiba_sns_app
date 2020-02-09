@@ -1,7 +1,8 @@
-<div class="row">
-  <div class="col-xs-5">
-    <%= form_for(@micropost) do |f| %>
-      <%= f.fields_for :hosemark do |i| %>
+<%= form_for(@micropost) do |f| %>
+  <%= f.fields_for :hosemark do |i| %>
+    <div class="row">
+      <!-- 馬印の領域 -->
+      <div class="col-xs-5">
         <!-- 馬印テーブル -->
         <table class="table table-responsive" style="white-space: nowrap">
           <thead>
@@ -212,7 +213,24 @@
             <% end %>
           </tbody>
         </table>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+      </div>
+      <!-- 買い目、予想コメント領域 -->
+      <div class="col-xs-5">
+        <!-- 買い目領域 -->
+        <div class="row">
+          <div class="col-xs-5">
+            <%= link_to "買い目を選ぶ", "#", class: "btn btn-lg btn-primary" %>
+          </div>
+          <div class="col-xs-5", style="border: 2px solid #000000;">
+            TODO 買い目を表示する
+          </div>
+        </div>
+        <!-- 予想コメントの領域 -->
+        <div class="field">
+          <%= f.text_area :content, placeholder: "予想コメントを記入してください" %>
+        </div>
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
