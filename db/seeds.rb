@@ -23,6 +23,27 @@ User.create!(name:  "test3",
 
 # 開発環境むけにRaceを生成
 menus = Menu.all
+
+hose1_name = "test1"
+hose1_gate_number = 1
+hose1_gate_color = "white"
+hose1_number = 1
+
+hose2_name = "test2"
+hose2_gate_number = 1
+hose2_gate_color = "white"
+hose2_number = 2
+
+hose3_name = "test3"
+hose3_gate_number = 2
+hose3_gate_color = "black"
+hose3_number = 3
+
+hose4_name = "test4"
+hose4_gate_number = 2
+hose4_gate_color = "black"
+hose4_number = 4
+
 # 11R分やる(東京)
 11.times do |n|
   place = "東京"
@@ -30,48 +51,29 @@ menus = Menu.all
   race_name = "レース_#{n+1}"
   cource_type = "芝"
   cource_length = 1600
-  hose_name1 = "馬名_1"
-  hose_name2 = "馬名_2"
-  hose_name3 = "馬名_3"
-  hose_name4 = "馬名_4"
-  hose_name5 = "馬名_5"
-  hose_name6 = "馬名_6"
-  hose_name7 = "馬名_7"
-  hose_name8 = "馬名_8"
-  hose_name9 = "馬名_9"
-  hose_name10 = "馬名_10"
-  hose_name11 = "馬名_11"
-  hose_name12 = "馬名_12"
-  hose_name13 = "馬名_13"
-  hose_name14 = "馬名_14"
-  hose_name15 = "馬名_15"
-  hose_name16 = "馬名_16"
-  hose_name17 = "馬名_17"
-  hose_name18 = "馬名_18"
   menus.each { |menu| menu.races.create!(
     place: place,
     round: round,
     race_name: race_name,
     cource_type: cource_type,
     cource_length: cource_length,
-    hose_name1: hose_name1,
-    hose_name2: hose_name2,
-    hose_name3: hose_name3,
-    hose_name4: hose_name4,
-    hose_name5: hose_name5,
-    hose_name6: hose_name6,
-    hose_name7: hose_name7,
-    hose_name8: hose_name8,
-    hose_name9: hose_name9,
-    hose_name10: hose_name10,
-    hose_name11: hose_name11,
-    hose_name12: hose_name12,
-    hose_name13: hose_name13,
-    hose_name14: hose_name14,
-    hose_name15: hose_name15,
-    hose_name16: hose_name16,
-    hose_name17: hose_name17,
-    hose_name18: hose_name18) }
+    hose1_name: hose1_name, 
+    hose1_gate_number: hose1_gate_number,
+    hose1_gate_color: hose1_gate_color,
+    hose1_number: hose1_number,
+    hose2_name: hose2_name, 
+    hose2_gate_number: hose2_gate_number,
+    hose2_gate_color: hose2_gate_color,
+    hose2_number: hose2_number,
+    hose3_name: hose3_name, 
+    hose3_gate_number: hose3_gate_number,
+    hose3_gate_color: hose3_gate_color,
+    hose3_number: hose3_number,
+    hose4_name: hose4_name, 
+    hose4_gate_number: hose4_gate_number,
+    hose4_gate_color: hose4_gate_color,
+    hose4_number: hose4_number
+    ) }
 end
 
 # 10R分やる(京都)
@@ -81,48 +83,29 @@ end
   round = n+1
   cource_type = "芝"
   cource_length = 1600
-  hose_name1 = "馬名_1"
-  hose_name2 = "馬名_2"
-  hose_name3 = "馬名_3"
-  hose_name4 = "馬名_4"
-  hose_name5 = "馬名_5"
-  hose_name6 = "馬名_6"
-  hose_name7 = "馬名_7"
-  hose_name8 = "馬名_8"
-  hose_name9 = "馬名_9"
-  hose_name10 = "馬名_10"
-  hose_name11 = "馬名_11"
-  hose_name12 = "馬名_12"
-  hose_name13 = "馬名_13"
-  hose_name14 = "馬名_14"
-  hose_name15 = "馬名_15"
-  hose_name16 = "馬名_16"
-  hose_name17 = "馬名_17"
-  hose_name18 = "馬名_18"
   menus.each { |menu| menu.races.create!(
     place: place,
     round: round,
     race_name: race_name,
     cource_type: cource_type,
     cource_length: cource_length,
-    hose_name1: hose_name1,
-    hose_name2: hose_name2,
-    hose_name3: hose_name3,
-    hose_name4: hose_name4,
-    hose_name5: hose_name5,
-    hose_name6: hose_name6,
-    hose_name7: hose_name7,
-    hose_name8: hose_name8,
-    hose_name9: hose_name9,
-    hose_name10: hose_name10,
-    hose_name11: hose_name11,
-    hose_name12: hose_name12,
-    hose_name13: hose_name13,
-    hose_name14: hose_name14,
-    hose_name15: hose_name15,
-    hose_name16: hose_name16,
-    hose_name17: hose_name17,
-    hose_name18: hose_name18) }
+    hose1_name: hose1_name, 
+    hose1_gate_number: hose1_gate_number,
+    hose1_gate_color: hose1_gate_color,
+    hose1_number: hose1_number,
+    hose2_name: hose2_name, 
+    hose2_gate_number: hose2_gate_number,
+    hose2_gate_color: hose2_gate_color,
+    hose2_number: hose2_number,
+    hose3_name: hose3_name, 
+    hose3_gate_number: hose3_gate_number,
+    hose3_gate_color: hose3_gate_color,
+    hose3_number: hose3_number,
+    hose4_name: hose4_name, 
+    hose4_gate_number: hose4_gate_number,
+    hose4_gate_color: hose4_gate_color,
+    hose4_number: hose4_number
+    ) }
 end
 
 # 9R分やる(小倉)
@@ -132,48 +115,29 @@ end
   race_name = "レース_#{n+1}"
   cource_type = "芝"
   cource_length = 1600
-  hose_name1 = "馬名_1"
-  hose_name2 = "馬名_2"
-  hose_name3 = "馬名_3"
-  hose_name4 = "馬名_4"
-  hose_name5 = "馬名_5"
-  hose_name6 = "馬名_6"
-  hose_name7 = "馬名_7"
-  hose_name8 = "馬名_8"
-  hose_name9 = "馬名_9"
-  hose_name10 = "馬名_10"
-  hose_name11 = "馬名_11"
-  hose_name12 = "馬名_12"
-  hose_name13 = "馬名_13"
-  hose_name14 = "馬名_14"
-  hose_name15 = "馬名_15"
-  hose_name16 = "馬名_16"
-  hose_name17 = "馬名_17"
-  hose_name18 = "馬名_18"
   menus.each { |menu| menu.races.create!(
     place: place,
     round: round,
     race_name: race_name,
     cource_type: cource_type,
     cource_length: cource_length,
-    hose_name1: hose_name1,
-    hose_name2: hose_name2,
-    hose_name3: hose_name3,
-    hose_name4: hose_name4,
-    hose_name5: hose_name5,
-    hose_name6: hose_name6,
-    hose_name7: hose_name7,
-    hose_name8: hose_name8,
-    hose_name9: hose_name9,
-    hose_name10: hose_name10,
-    hose_name11: hose_name11,
-    hose_name12: hose_name12,
-    hose_name13: hose_name13,
-    hose_name14: hose_name14,
-    hose_name15: hose_name15,
-    hose_name16: hose_name16,
-    hose_name17: hose_name17,
-    hose_name18: hose_name18) }
+    hose1_name: hose1_name, 
+    hose1_gate_number: hose1_gate_number,
+    hose1_gate_color: hose1_gate_color,
+    hose1_number: hose1_number,
+    hose2_name: hose2_name, 
+    hose2_gate_number: hose2_gate_number,
+    hose2_gate_color: hose2_gate_color,
+    hose2_number: hose2_number,
+    hose3_name: hose3_name, 
+    hose3_gate_number: hose3_gate_number,
+    hose3_gate_color: hose3_gate_color,
+    hose3_number: hose3_number,
+    hose4_name: hose4_name, 
+    hose4_gate_number: hose4_gate_number,
+    hose4_gate_color: hose4_gate_color,
+    hose4_number: hose4_number
+    ) }
 end
 
 # 開発機向けにマイクロポストを生成
