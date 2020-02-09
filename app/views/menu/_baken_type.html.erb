@@ -1,0 +1,64 @@
+<table class="table table-responsive" style="white-space: nowrap">
+  <tbody>
+    <tr style="background:#F4D0D0">
+      <td><a id="tansyo" href="javascript:void(0);">単勝</a></td>
+    </tr>
+    <tr style="background:#FFE2FC">
+      <td><a id="hukusho" href="javascript:void(0);">複勝</a></td>
+    </tr>
+    <tr style="background:#E6C6F7">
+      <td>
+        <p style="display:inline;">馬連</p>
+        <a id="umaren_nagashi" href="javascript:void(0);">ながし</a>
+        <a id="umaren_box" href="javascript:void(0);">ボックス</a>
+        <a id="umaren_formation" href="javascript:void(0);">フォーメーション</a>
+      </td>
+    </tr>
+    <tr style="background:#D3D3FF">
+      <td>
+        <p style="display:inline;">馬単</p>
+        <a id="umatan_nagashi" href="javascript:void(0);">ながし</a>
+        <a id="umatan_box" href="javascript:void(0);">ボックス</a>
+        <a id="umatan_formation" href="javascript:void(0);">フォーメーション</a>
+      </td>
+    </tr>
+    <tr style="background:#ACF9FF">
+      <td>
+        <p style="display:inline;">ワイド</p>
+        <a id="wide_nagashi" href="javascript:void(0);">ながし</a>
+        <a id="wide_box" href="javascript:void(0);">ボックス</a>
+        <a id="wide_formation" href="javascript:void(0);">フォーメーション</a>
+      </td>
+    </tr>
+    <tr style="background:#C5FFC3">
+      <td>
+        <p style="display:inline;">三連複</p>
+        <a id="sanrenpuku_nagashi1" href="javascript:void(0);">軸1頭ながし</a>
+        <a id="sanrenpuku_nagashi2" href="javascript:void(0);">軸2頭ながし</a>
+        <a id="sanrenpuku_box" href="javascript:void(0);">ボックス</a>
+        <a id="sanrenpuku_formation" href="javascript:void(0);">フォーメーション</a>
+      </td>
+    </tr>
+    <tr style="background:#FFF8C1">
+      <td>
+        <p style="display:inline;">三連単</p>
+        <a id="sanrentan_nagashi1" href="javascript:void(0);">軸1頭ながし</a>
+        <a id="sanrentan_nagashi2" href="javascript:void(0);">軸2頭ながし</a>
+        <a id="sanrentan_box" href="javascript:void(0);">ボックス</a>
+        <a id="sanrentan_formation" href="javascript:void(0);">フォーメーション</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" id="close" class="btn btn-primary center-block">戻る</button>
+
+<div id="output"></div>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#tansyo").on('click', function () {
+      $("#output").html("リンク1がクリックされました。");
+    });
+  })
+</script>
