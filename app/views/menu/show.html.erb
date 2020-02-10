@@ -58,14 +58,15 @@
 <!-- レース情報 -->
 <div id="race_info">
   <h1><%= @race.race_name %> <%= @race.cource_type %> <%= @race.cource_length %>m</h1>
+  <!-- マイクロポスト投稿画面 -->
+  <%= form_for(:micropost, url: microposts_path) do |f| %>
+    <%= hidden_field_tag :race_id, @race.id %>
+    <%= f.submit "レースを予想する", class: "btn btn-primary center-block" %>
+  <% end %>
 </div>
 
-<% if posting_mode && logged_in? %>
-  <!-- マイクロポスト投稿モード -->
-  <%= render 'mode_posting' %>
-<% else %> 
-  <!-- マイクロポスト閲覧モード -->
-  <%= render 'mode_feeding' %>
-<% end %>
+<!-- マイクロポスト表示 -->
+<%= render 'mode_feeding' %>
+
   
 
