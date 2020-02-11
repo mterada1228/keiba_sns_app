@@ -229,10 +229,16 @@
           <div class="col-xs-4">
             <button type="button" id="select_baken" class="btn btn-primary">買い目を選ぶ</button>
           </div>
-          <div class="col-xs-8 pull-right">
-            <!-- TODO　買い目を表示できるようにする -->
-            <p>買い目①</p>
-            <p>買い目②</p>
+          <div class="col-xs-8 pull-right" style="height:50px;overflow:auto;border:1px solid #aaa;padding:10px;">
+            <% @kaimes.each do |kaime| %>
+              <% if kaime.second_hoses.nil? && kaime.third_hoses.nil? %>
+                <p> <%= kaime.baken_type %> : <%= kaime.first_hoses %> <%= kaime.betting %>円 </p>
+              <% elsif kaime.third_hoses.nil? %>
+                <p> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> - <%= kaime.second_hoses %> <%= kaime.betting %>円 </p>
+              <% else %>
+                <p> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> - <%= kaime.second_hoses %> - <%= kaime.third_hoses %> <%= kaime.betting %>円 </p>
+              <% end %>
+            <% end %>
           </div>
         </div>
         <!-- 予想コメントの領域 -->

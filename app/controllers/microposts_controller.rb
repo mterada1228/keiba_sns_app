@@ -5,6 +5,7 @@ class MicropostsController < ApplicationController
   def show
     @micropost = Micropost.find(params[:id])
     @micropost.build_hosemark
+    @kaimes = @micropost.kaimes
     @kaime = Kaime.new
   end
   

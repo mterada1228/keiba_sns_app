@@ -13,7 +13,7 @@
         <tr class='gate_<%= @micropost.race.hose1_gate_color %>'>
           <td>
             <font color="#000000">
-              <%= k.radio_button :first_hoses, :hose1 %>
+              <%= k.radio_button :first_hoses, :'1' %>
             </font>
           </td>
           <td><%= @micropost.race.hose1_number %></td>
@@ -24,7 +24,7 @@
         <tr class='gate_<%= @micropost.race.hose2_gate_color %>'>
           <td>
             <font color="#000000">
-              <%= k.radio_button :first_hoses, :hose2 %>
+              <%= k.radio_button :first_hoses, :'2' %>
             </font>
           </td>
           <td><%= @micropost.race.hose2_number %></td>
@@ -35,7 +35,7 @@
         <tr class='gate_<%= @micropost.race.hose3_gate_color %>'>
           <td>
             <font color="#000000">
-              <%= k.radio_button :first_hoses, :hose3 %>
+              <%= k.radio_button :first_hoses, :'3' %>
             </font>
           </td>
           <td><%= @micropost.race.hose3_number %></td>
@@ -46,11 +46,33 @@
         <tr class='gate_<%= @micropost.race.hose4_gate_color %>'>
           <td>
             <font color="#000000">
-              <%= k.radio_button :first_hoses, :hose4 %>
+              <%= k.radio_button :first_hoses, :'4' %>
             </font>
           </td>
           <td><%= @micropost.race.hose4_number %></td>
           <td><%= @micropost.race.hose4_name %></td>
+        </tr>
+      <% end %>
+      <% if !@micropost.race.hose5_name.nil? %>
+        <tr class='gate_<%= @micropost.race.hose5_gate_color %>'>
+          <td>
+            <font color="#000000">
+              <%= k.radio_button :first_hoses, :'5' %>
+            </font>
+          </td>
+          <td><%= @micropost.race.hose5_number %></td>
+          <td><%= @micropost.race.hose5_name %></td>
+        </tr>
+      <% end %>
+      <% if !@micropost.race.hose6_name.nil? %>
+        <tr class='gate_<%= @micropost.race.hose6_gate_color %>'>
+          <td>
+            <font color="#000000">
+              <%= k.radio_button :first_hoses, :'6' %>
+            </font>
+          </td>
+          <td><%= @micropost.race.hose6_number %></td>
+          <td><%= @micropost.race.hose6_name %></td>
         </tr>
       <% end %>
     </tbody>
@@ -60,7 +82,7 @@
   <%= k.text_field :betting, class: 'form-control' %> 円
 
   <%= hidden_field_tag :micropost_id, @micropost.id %>
-  <%= hidden_field_tag :buy_type, "単勝" %>
+  <%= hidden_field_tag :baken_type, "単勝" %>
 
   <%= k.submit "決定", class: "btn btn-primary" %>
   <button type="button" id="close" class="btn btn-primary center-block">戻る</button>
