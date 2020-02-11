@@ -4,20 +4,21 @@ class MicropostsController < ApplicationController
   # TODO テストを記す
   def show
     @micropost = Micropost.find(params[:id])
+    @micropost.build_hosemark
   end
   
   # POST /micropost
-  # TODO テストを記す
   def create
+    
+    if current_user.nil?
+      flash[:info] = "予想の投稿にはログインが必要です"
+      redirect_to login_path
+      return
+    end
     
     @micropost = current_user.microposts.build()
     @micropost.race_id = params[:race_id]
     
-    if current_user.nil?
-      flash[:info] = "予想の投稿にはログインが必要です"
-      redirect_to signup_path
-    end
-
     if @micropost.save
       # マイクロポストのshowページに遷移する
       redirect_to micropost_path(@micropost)
