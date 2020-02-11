@@ -21,6 +21,19 @@ class MenuMicropostTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'microposts/show'
     assert flash.empty?
+    
+    # 買い目を選択すると保存が成功し、マイクロポスト画面に表示される事
+    micropost_id = assigns(:micropost).id
+    baken_type = "馬連"
+    buy_type = "ながし"
+    post kaimes_path, params: { kaime: {first_hoses: "1",
+                                        second_hoses: "2",
+                                        betting: 300},
+                                micropost_id: micropost_id,
+                                baken_type: baken_type,
+                                buy_type: buy_type }
+    follow_redirect!
+    assert_match '馬連 ながし : 1 - 2 300円', response.body
 
   end
 

@@ -7,6 +7,7 @@ class MicropostsController < ApplicationController
     @micropost.build_hosemark
     @kaimes = @micropost.kaimes
     @kaime = Kaime.new
+    @hoses = create_hose_table(@micropost.race)
   end
   
   # POST /micropost

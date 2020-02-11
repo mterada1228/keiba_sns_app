@@ -8,72 +8,18 @@
       </tr>
     </thead>
     <tbody>
-      <!-- TODO 残り18頭目まで繰り返し -->
-      <% if !@micropost.race.hose1_name.nil? %>
-        <tr class='gate_<%= @micropost.race.hose1_gate_color %>'>
-          <td>
-            <font color="#000000">
-              <%= k.radio_button :first_hoses, :'1' %>
-            </font>
-          </td>
-          <td><%= @micropost.race.hose1_number %></td>
-          <td><%= @micropost.race.hose1_name %></td>
-        </tr>
-      <% end %>
-      <% if !@micropost.race.hose2_name.nil? %>
-        <tr class='gate_<%= @micropost.race.hose2_gate_color %>'>
-          <td>
-            <font color="#000000">
-              <%= k.radio_button :first_hoses, :'2' %>
-            </font>
-          </td>
-          <td><%= @micropost.race.hose2_number %></td>
-          <td><%= @micropost.race.hose2_name %></td>
-        </tr>
-      <% end %>
-      <% if !@micropost.race.hose3_name.nil? %>
-        <tr class='gate_<%= @micropost.race.hose3_gate_color %>'>
-          <td>
-            <font color="#000000">
-              <%= k.radio_button :first_hoses, :'3' %>
-            </font>
-          </td>
-          <td><%= @micropost.race.hose3_number %></td>
-          <td><%= @micropost.race.hose3_name %></td>
-        </tr>
-      <% end %>
-      <% if !@micropost.race.hose4_name.nil? %>
-        <tr class='gate_<%= @micropost.race.hose4_gate_color %>'>
-          <td>
-            <font color="#000000">
-              <%= k.radio_button :first_hoses, :'4' %>
-            </font>
-          </td>
-          <td><%= @micropost.race.hose4_number %></td>
-          <td><%= @micropost.race.hose4_name %></td>
-        </tr>
-      <% end %>
-      <% if !@micropost.race.hose5_name.nil? %>
-        <tr class='gate_<%= @micropost.race.hose5_gate_color %>'>
-          <td>
-            <font color="#000000">
-              <%= k.radio_button :first_hoses, :'5' %>
-            </font>
-          </td>
-          <td><%= @micropost.race.hose5_number %></td>
-          <td><%= @micropost.race.hose5_name %></td>
-        </tr>
-      <% end %>
-      <% if !@micropost.race.hose6_name.nil? %>
-        <tr class='gate_<%= @micropost.race.hose6_gate_color %>'>
-          <td>
-            <font color="#000000">
-              <%= k.radio_button :first_hoses, :'6' %>
-            </font>
-          </td>
-          <td><%= @micropost.race.hose6_number %></td>
-          <td><%= @micropost.race.hose6_name %></td>
-        </tr>
+      <% @hoses.each do |hose| %>
+        <% if !hose[1][:name].nil? %>
+          <tr class='gate_<%= hose[1][:gate_col] %>'>
+            <td>
+              <font color="#000000">
+                <%= k.radio_button :first_hoses, :'1' %>
+              </font>
+            </td>
+            <td><%= hose[1][:hose_num] %></td>
+            <td><%= hose[1][:name] %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

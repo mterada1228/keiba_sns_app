@@ -1,7 +1,6 @@
 class KaimesController < ApplicationController
 
   # POST /kaimes
-  # TODO テストを書く
   def create
     
     @kaime = Kaime.new(kaime_params)
@@ -26,8 +25,7 @@ class KaimesController < ApplicationController
   private
     
     def kaime_params
-      params.require(:kaime).permit(:id,
-                                    :baken_type,
+      params.require(:kaime).permit(:baken_type,
                                     :buy_type,
                                     :first_hoses,
                                     :second_hoses,
