@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  baken_type: MyString
+  buy_type: MyString
+  first_hoses: MyString
+  second_hoses: MyString
+  third_hoses: MyString
+  betting: 1
+  micropost: 
+
+two:
+  baken_type: MyString
+  buy_type: MyString
+  first_hoses: MyString
+  second_hoses: MyString
+  third_hoses: MyString
+  betting: 1
+  micropost: 

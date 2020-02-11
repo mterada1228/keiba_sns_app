@@ -1,0 +1,68 @@
+<%= form_for(@kaime) do |k| %>
+  <table class="table table-responsive" style="white-space: nowrap">
+    <thead>
+      <tr>
+        <th></th>
+        <th>馬番</th>
+        <th>馬名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- TODO 残り18頭目まで繰り返し -->
+      <% if !@micropost.race.hose1_name.nil? %>
+        <tr class='gate_<%= @micropost.race.hose1_gate_color %>'>
+          <td>
+            <font color="#000000">
+              <%= k.radio_button :first_hoses, :hose1 %>
+            </font>
+          </td>
+          <td><%= @micropost.race.hose1_number %></td>
+          <td><%= @micropost.race.hose1_name %></td>
+        </tr>
+      <% end %>
+      <% if !@micropost.race.hose2_name.nil? %>
+        <tr class='gate_<%= @micropost.race.hose2_gate_color %>'>
+          <td>
+            <font color="#000000">
+              <%= k.radio_button :first_hoses, :hose2 %>
+            </font>
+          </td>
+          <td><%= @micropost.race.hose2_number %></td>
+          <td><%= @micropost.race.hose2_name %></td>
+        </tr>
+      <% end %>
+      <% if !@micropost.race.hose3_name.nil? %>
+        <tr class='gate_<%= @micropost.race.hose3_gate_color %>'>
+          <td>
+            <font color="#000000">
+              <%= k.radio_button :first_hoses, :hose3 %>
+            </font>
+          </td>
+          <td><%= @micropost.race.hose3_number %></td>
+          <td><%= @micropost.race.hose3_name %></td>
+        </tr>
+      <% end %>
+      <% if !@micropost.race.hose4_name.nil? %>
+        <tr class='gate_<%= @micropost.race.hose4_gate_color %>'>
+          <td>
+            <font color="#000000">
+              <%= k.radio_button :first_hoses, :hose4 %>
+            </font>
+          </td>
+          <td><%= @micropost.race.hose4_number %></td>
+          <td><%= @micropost.race.hose4_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <%= k.label "購入金額" %>
+  <%= k.text_field :betting, class: 'form-control' %> 円
+
+  <%= hidden_field_tag :micropost_id, @micropost.id %>
+  <%= hidden_field_tag :buy_type, "単勝" %>
+
+  <%= k.submit "決定", class: "btn btn-primary" %>
+  <button type="button" id="close" class="btn btn-primary center-block">戻る</button>
+
+<% end %>

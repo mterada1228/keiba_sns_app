@@ -55,7 +55,7 @@
 
 <!-- モーダルウインドウで買い目入力 -->
 <div id="modalWindow_tansho" class="modal_select_baken">  
-  単勝
+  <%= render 'tansho' %>
 </div>
 
 <script type="text/javascript">
@@ -69,6 +69,11 @@
       });
       // TODO 他買い目のをかく
     })
+    
+    // 「Close」ボタンをクリック時に、fadeOutメソッドでHTML要素を非表示にする
+    $('#close').on('click', function() {
+      $('#overlay, #modalWindow').fadeOut();
+    });
     
     // モーダルウィンドウを中央配置するための配置場所を計算する関数
     function locateCenter() {

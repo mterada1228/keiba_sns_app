@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'kaimes/create'
+
+  get 'kaimes/delete'
+
   get 'mode_change/new'
 
   root 'static_pages#home'
@@ -17,5 +21,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
+  resources :kaimes, only: [:create, :delete]
   
 end

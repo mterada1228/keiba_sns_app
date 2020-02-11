@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200208035312) do
+ActiveRecord::Schema.define(version: 20200211022505) do
 
   create_table "hosemarks", force: :cascade do |t|
     t.string "hose1_mark"
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(version: 20200208035312) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["micropost_id"], name: "index_hosemarks_on_micropost_id"
+  end
+
+  create_table "kaimes", force: :cascade do |t|
+    t.string "baken_type"
+    t.string "buy_type"
+    t.string "first_hoses"
+    t.string "second_hoses"
+    t.string "third_hoses"
+    t.integer "betting"
+    t.integer "micropost_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["micropost_id"], name: "index_kaimes_on_micropost_id"
   end
 
   create_table "menus", force: :cascade do |t|
