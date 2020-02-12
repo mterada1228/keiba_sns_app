@@ -28,7 +28,7 @@
   <%= k.text_field :betting, class: 'form-control' %> 円
 
   <%= hidden_field_tag :micropost_id, @micropost.id %>
-  <%= hidden_field_tag :baken_type, "単勝" %>
+  <%= hidden_field_tag :baken_type, "複勝" %>
 
   <%= k.submit "決定", class: "btn btn-primary" %>
   <button type="button" id="close" class="btn btn-primary center-block">戻る</button>

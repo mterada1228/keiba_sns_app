@@ -53,10 +53,19 @@
 
 <button type="button" id="close" class="btn btn-primary center-block">戻る</button>
 
-<!-- モーダルウインドウで買い目入力 -->
+<!-- 単勝 -->
 <div id="modalWindow_tansho" class="modal_select_baken">  
   <%= render 'tansho' %>
 </div>
+<!-- 複勝 -->
+<div id="modalWindow_hukusho" class="modal_select_baken">  
+  <%= render 'hukusho' %>
+</div>
+<!-- 馬連ながし -->
+<div id="modalWindow_umaren_nagashi" class="modal_select_baken">
+  <%= render 'nagashi', baken_type: "馬連" %>
+</div>
+
 
 <script type="text/javascript">
   $(function() {
@@ -67,7 +76,114 @@
         locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
         $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
       });
-      // TODO 他買い目のをかく
+      // 複勝
+      $("#hukusho").on('click', function () {
+        $('#modalWindow_hukusho').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 馬連ながし
+      $("#umaren_nagashi").on('click', function () {
+        $('#modalWindow_umaren_nagashi').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 馬連ボックス
+      $("#umaren_box").on('click', function () {
+        $('#modalWindow_umatan_box').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 馬連フォーメーション
+      $("#umaren_formation").on('click', function () {
+        $('#modalWindow_umaren_formation').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 馬単ながし
+      $("#umatan_nagashi").on('click', function () {
+        $('#modalWindow_umatan_nagashi').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 馬単ボックス
+      $("#umatan_box").on('click', function () {
+        $('#modalWindow_umatan_box').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 馬単フォーメーション
+      $("#umatan_formation").on('click', function () {
+        $('#modalWindow_umatan_formation').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // ワイドながし
+      $("#wide_nagashi").on('click', function () {
+        $('#modalWindow_wide_nagashi').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // ワイドボックス
+      $("#wide_box").on('click', function () {
+        $('#modalWindow_wide_box').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // ワイドフォーメーション
+      $("#wide_formation").on('click', function () {
+        $('#modalWindow_wide_formation').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連複軸1頭ながし
+      $("#sanrenpuku_nagashi1").on('click', function () {
+        $('#modalWindow_sanrenpuku_nagashi1').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連複軸2頭ながし
+      $("#sanrenpuku_nagashi2").on('click', function () {
+        $('#modalWindow_sanrenpuku_nagashi2').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連複ボックス
+      $("#sanrenpuku_box").on('click', function () {
+        $('#modalWindow_sanrenpuku_box').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連複フォーメーション
+      $("#sanrenpuku_formation").on('click', function () {
+        $('#modalWindow_sanrenpuku_formation').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連単軸1頭ながし
+      $("#sanrentan_nagashi1").on('click', function () {
+        $('#modalWindow_sanrentan_nagashi1').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連単軸2頭ながし
+      $("#sanrentan_nagashi2").on('click', function () {
+        $('#modalWindow_sanrentan_nagashi2').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連単ボックス
+      $("#sanrentan_box").on('click', function () {
+        $('#modalWindow_sanrentan_box').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
+      // 三連単フォーメーション
+      $("#sanrentan_formation").on('click', function () {
+        $('#modalWindow_sanrentan_formation').fadeIn();
+        locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
+        $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
+      });
     })
     
     // 「Close」ボタンをクリック時に、fadeOutメソッドでHTML要素を非表示にする
