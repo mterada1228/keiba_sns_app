@@ -232,7 +232,7 @@
           <div class="col-xs-8 pull-right" style="height:50px;overflow:auto;border:1px solid #aaa;padding:10px;">
             <% @kaimes.each do |kaime| %>
               <% if kaime.second_hoses.nil? && kaime.third_hoses.nil? %>
-                <p> <%= kaime.baken_type %> : <%= kaime.first_hoses %> <%= kaime.betting %>円 </p>
+                <p> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> <%= kaime.betting %>円 </p>
               <% elsif kaime.third_hoses.nil? %>
                 <p> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> - <%= kaime.second_hoses %> <%= kaime.betting %>円 </p>
               <% else %>

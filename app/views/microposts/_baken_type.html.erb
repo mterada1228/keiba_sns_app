@@ -65,7 +65,46 @@
 <div id="modalWindow_umaren_nagashi" class="modal_select_baken">
   <%= render 'nagashi', baken_type: "馬連" %>
 </div>
-
+<!-- 馬連ボックス -->
+<div id="modalWindow_umaren_box" class="modal_select_baken">
+  <%= render 'box', baken_type: "馬連" %>
+</div>
+<!-- 馬連フォーメーション -->
+<div id="modalWindow_umaren_formation" class="modal_select_baken">
+  <%= render 'formation', baken_type: "馬連" %>
+</div>
+<!-- 馬単ながし -->
+<div id="modalWindow_umatan_nagashi" class="modal_select_baken">
+  <%= render 'nagashi', baken_type: "馬単" %>
+</div>
+<!-- 馬単ボックス -->
+<div id="modalWindow_umatan_box" class="modal_select_baken">
+  <%= render 'box', baken_type: "馬単" %>
+</div>
+<!-- 馬単フォーメーション -->
+<div id="modalWindow_umatan_formation" class="modal_select_baken">
+  <%= render 'formation', baken_type: "馬単" %>
+</div>
+<!-- ワイドながし -->
+<div id="modalWindow_wide_nagashi" class="modal_select_baken">
+  <%= render 'nagashi', baken_type: "ワイド" %>
+</div>
+<!-- ワイドボックス -->
+<div id="modalWindow_wide_box" class="modal_select_baken">
+  <%= render 'box', baken_type: "ワイド" %>
+</div>
+<!-- ワイドフォーメーション -->
+<div id="modalWindow_wide_formation" class="modal_select_baken">
+  <%= render 'formation', baken_type: "ワイド" %>
+</div>
+<!-- 三連複軸1頭ながし -->
+<div id="modalWindow_sanrenpuku_nagashi1" class="modal_select_baken">
+  <%= render 'nagashi', baken_type: "三連複" %>
+</div>
+<!-- 三連複軸2頭ながし -->
+<div id="modalWindow_sanrenpuku_nagashi2" class="modal_select_baken">
+  <%= render 'nagashi2', baken_type: "三連複" %>
+</div>
 
 <script type="text/javascript">
   $(function() {
@@ -90,7 +129,7 @@
       });
       // 馬連ボックス
       $("#umaren_box").on('click', function () {
-        $('#modalWindow_umatan_box').fadeIn();
+        $('#modalWindow_umaren_box').fadeIn();
         locateCenter();  // => モーダルウィンドウを中央配置するための初期値を設定する
         $(window).resize(locateCenter);  // => ウィンドウのリサイズに合わせて、モーダルウィンドウの配置を変える
       });

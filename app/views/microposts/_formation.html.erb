@@ -2,8 +2,8 @@
   <table class="table table-responsive" style="white-space: nowrap">
     <thead>
       <tr>
-        <th>軸</th>
-        <th>相手</th>
+        <th>1頭目</th>
+        <th>2頭目</th>
         <th>馬番</th>
         <th>馬名</th>
       </tr>
@@ -14,17 +14,14 @@
           <tr class='gate_<%= hose[1][:gate_col] %>'>
             <td>
               <font color="#000000">
-                <%= k.radio_button :first_hoses, hose[1][:hose_num] %>
+                <%= k.check_box :first_hoses, { multiple: true, checked: hose[1][:checked], disabled: hose[1][:disabled], include_hidden: false }, hose[1][:hose_num] %>
               </font>
             </td>
             <td>
-              <%= k.check_box :second_hoses, { multiple: true, checked: hose[1][:checked], disabled: hose[1][:disabled], include_hidden: false }, hose[1][:hose_num] %>
+              <font color="#000000">
+                <%= k.check_box :second_hoses, { multiple: true, checked: hose[1][:checked], disabled: hose[1][:disabled], include_hidden: false }, hose[1][:hose_num] %>
+              </font>
             </td>
-            <% if baken_type == "三連複" || baken_type == "三連単" %>
-              <td>
-                <%= k.check_box :third_hoses, { multiple: true, checked: hose[1][:checked], disabled: hose[1][:disabled], include_hidden: false }, hose[1][:hose_num] %>
-              </td>
-            <% end %>
             <td><%= hose[1][:hose_num] %></td>
             <td><%= hose[1][:name] %></td>
           </tr>
@@ -36,7 +33,7 @@
   <%= k.text_field :betting, class: 'form-control' %> 円
   <%= hidden_field_tag :micropost_id, @micropost.id %>
   <%= hidden_field_tag :baken_type, baken_type %>
-  <%= hidden_field_tag :buy_type, "ながし" %>
+  <%= hidden_field_tag :buy_type, "フォーメーション" %>
   <%= k.submit "決定", class: "btn btn-primary" %>
   <button type="button" id="close" class="btn btn-primary center-block">戻る</button>
 <% end %>

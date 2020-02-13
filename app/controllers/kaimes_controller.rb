@@ -27,8 +27,10 @@ class KaimesController < ApplicationController
     def kaime_params
       params.require(:kaime).permit(:baken_type,
                                     :buy_type,
-                                    :first_hoses,
                                     :betting,
+                                    :first_hoses,
+                                    :second_hoses,
+                                    first_hoses: [],
                                     second_hoses: [],
                                     third_hoses: [])
     end
