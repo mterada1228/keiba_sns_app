@@ -1,2 +1,27 @@
-<!-- TODO ページを完成させる -->
-<h1>ログイン成功しますた</h1>
+<% if @user.microposts.any? %>
+  <%= will_paginate @microposts %>
+  <ol class="microposts">
+    <% @microposts.each do |micropost| %>
+      <li id="micropost-<%= micropost.id %>">
+        <h2><%= micropost.race.menu.today_date.strftime("%Y年 %-m月 %-d日") %> <%= micropost.race.place %> <%= micropost.race.round %>R <%= micropost.race.race_name %></h2>
+        <div class="row">
+          <div class="col-xs-5">
+            <ol style="list-style-type: none;">
+              <% create_hose_mark_tab(micropost).each do |hose| %>
+                <% if !hose[:hose_mark].blank? %>
+                  <li> <%= hose[:hose_mark] %> <%= hose[:name] %> </li>
+                <% end %>
+              <% end %>
+            </ol>
+          </div>
+          <div class="col-xs-7">
+            <span class="content"><%= micropost.content %></span>
+            <span class="timestamp">
+              <%= time_ago_in_words(micropost.created_at) %> 前
+            </span>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+<% end %>

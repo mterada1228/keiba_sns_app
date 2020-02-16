@@ -5,9 +5,8 @@
   <div class="row">
     
     <div class="col-xs-2">
-      <!-- TODO ユーザページへのリンク -->
       <%= image_tag micropost.user.picture.url, width: "50", height: "50" %>
-      <span class="user"><%= link_to micropost.user.name, "#" %></span>
+      <span class="user"><%= link_to micropost.user.name, user_path(micropost.user) %></span>
     </div>
     
     <div class="col-xs-4">

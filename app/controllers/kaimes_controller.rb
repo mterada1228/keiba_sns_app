@@ -3,6 +3,8 @@ class KaimesController < ApplicationController
   # POST /kaimes
   def create
     
+    # TODO 買い目投稿した時に、入力途中の馬印とコメントが消えないようにする
+    
     @kaime = Kaime.new(kaime_params)
     @kaime.micropost_id = params[:micropost_id]
     @kaime.baken_type = params[:baken_type]

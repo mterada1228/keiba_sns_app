@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   
   # GET /users/id
   def show
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.where(activated: true).paginate(page: params[:page])
   end
   
   private
