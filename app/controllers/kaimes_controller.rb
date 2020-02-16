@@ -10,12 +10,8 @@ class KaimesController < ApplicationController
     
     @micropost = Micropost.find(params[:micropost_id])
     
-    if @kaime.save
-      # マイクロポストのshowページに遷移する
-      redirect_to micropost_path(@micropost)
-    else
-      redirect_to root_url
-    end
+    @kaime.save
+    redirect_to micropost_path(@micropost)
 
   end
 

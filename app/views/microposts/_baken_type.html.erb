@@ -105,6 +105,30 @@
 <div id="modalWindow_sanrenpuku_nagashi2" class="modal_select_baken">
   <%= render 'nagashi2', baken_type: "三連複" %>
 </div>
+<!-- 三連複ボックス -->
+<div id="modalWindow_sanrenpuku_box" class="modal_select_baken">
+  <%= render 'box', baken_type: "三連複" %>
+</div>
+<!-- 三連複フォーメーション -->
+<div id="modalWindow_sanrenpuku_formation" class="modal_select_baken">
+  <%= render 'formation', baken_type: "三連複" %>
+</div>
+<!-- 三連単軸1頭ながし -->
+<div id="modalWindow_sanrentan_nagashi1" class="modal_select_baken">
+  <%= render 'nagashi', baken_type: "三連単" %>
+</div>
+<!-- 三連単軸2頭ながし -->
+<div id="modalWindow_sanrentan_nagashi2" class="modal_select_baken">
+  <%= render 'nagashi2', baken_type: "三連単" %>
+</div>
+<!-- 三連単ボックス -->
+<div id="modalWindow_sanrentan_box" class="modal_select_baken">
+  <%= render 'box', baken_type: "三連単" %>
+</div>
+<!-- 三連単フォーメーション -->
+<div id="modalWindow_sanrentan_formation" class="modal_select_baken">
+  <%= render 'formation', baken_type: "三連単" %>
+</div>
 
 <script type="text/javascript">
   $(function() {
@@ -226,8 +250,8 @@
     })
     
     // 「Close」ボタンをクリック時に、fadeOutメソッドでHTML要素を非表示にする
-    $('#close').on('click', function() {
-      $('#overlay, #modalWindow').fadeOut();
+    $('.close_kaime').on('click', function() {
+      $('.modal_select_baken').fadeOut();
     });
     
     // モーダルウィンドウを中央配置するための配置場所を計算する関数
