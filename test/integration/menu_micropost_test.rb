@@ -34,6 +34,22 @@ class MenuMicropostTest < ActionDispatch::IntegrationTest
                                 buy_type: buy_type }
     follow_redirect!
     assert_match '馬連 ながし : 1 - 2 300円', response.body
+    
+    # 投稿するボタンを押下しなかった場合は、そのマイクロポストが表示されない事
+    post microposts_path, params: { race_id: @race.id,
+                                    content: "表示されない"}
+    menu = @race.menu
+    get menu_path(menu, course_name: @race.place, round: @race.round)
+    assert_no_match '表示されない', response.body
+    
+    # 投稿するボタンを押下した場合は、そのマイクロポストが表示される事
+    post microposts_path, params: { race_id: @race.id }
+    follow_redirect!
+    micropost = assigns(:micropost)
+    patch micropost_path(micropost), params: { micropost: {content: "表示される",
+                                                           hosemark_attributes: {hose1_mark: ""} }}
+    follow_redirect!
+    assert_match '表示される', response.body
 
   end
 

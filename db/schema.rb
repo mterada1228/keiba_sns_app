@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200211022505) do
+ActiveRecord::Schema.define(version: 20200216113133) do
 
   create_table "hosemarks", force: :cascade do |t|
     t.string "hose1_mark"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20200211022505) do
     t.string "first_hoses"
     t.string "second_hoses"
     t.string "third_hoses"
-    t.integer "betting"
+    t.integer "betting", default: 0
     t.integer "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20200211022505) do
     t.integer "race_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "activated", default: false
     t.index ["race_id"], name: "index_microposts_on_race_id"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end

@@ -6,7 +6,7 @@ class CreateKaimes < ActiveRecord::Migration[5.1]
       t.string :first_hoses
       t.string :second_hoses
       t.string :third_hoses
-      t.integer :betting
+      t.integer :betting, default: 0
       t.references :micropost, foreign_key: true
 
       t.timestamps

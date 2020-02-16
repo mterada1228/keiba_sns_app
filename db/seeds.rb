@@ -148,7 +148,17 @@ races = Race.all
   races.each do |race|
     users.each { |user| user.microposts.create!(
       content: "予想#{n+1} 場所: #{race.place} ラウンド: #{race.round}",
-      race_id: race.id
+      race_id: race.id, 
+      activated: true
     )}
   end
 end
+
+# 馬印を生成
+microposts = Micropost.all
+
+microposts.each { |micropost| micropost.build_hosemark(
+  hose1_mark: '◎',
+  hose3_mark: '◯',
+  hose5_mark: '▲'
+).save }

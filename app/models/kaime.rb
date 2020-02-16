@@ -12,7 +12,6 @@ class Kaime < ApplicationRecord
   private
   
     # 軸馬が相手に含まれていた場合除去する
-    # TODO テストする
     def trim_duplicate
       
       if self.buy_type == "ながし"

@@ -31,6 +31,22 @@ class MicropostsController < ApplicationController
 
   end
   
+  # PATCH /microposts/id
+  def update
+    
+    @micropost = Micropost.find(params[:id])
+    @micropost.update_attributes(micropost_params)
+    
+    # editが押下されたらactivatedをtrueに変更する。
+    @micropost.update(activated: true)
+    
+    # 投稿したレースのmenuページに遷移する。
+    race = @micropost.race
+    menu = race.menu
+    redirect_to menu_path(menu, course_name: race.place, round: race.round)
+
+  end
+  
   private
 
   # strong parameter

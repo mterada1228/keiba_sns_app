@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   # includeする事で全コントローラーから呼び出せる
   include SessionsHelper
   include MicropostsHelper
+  include MenuHelper
 
 end
