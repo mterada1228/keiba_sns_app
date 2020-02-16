@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'userinfo_change/new'
+
+  get 'userinfo_change/update'
+
   get 'kaimes/create'
 
   get 'kaimes/delete'
@@ -22,5 +26,6 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :kaimes, only: [:create, :delete]
+  resources :userinfo_change, only: [:new]
   
 end

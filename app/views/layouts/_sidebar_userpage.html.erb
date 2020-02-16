@@ -2,11 +2,11 @@
   <ul class="nav nav-pills nav-stacked">
     <li class="sidebar">
       <div class="sidebar_avatars">
-        <%= image_tag current_user.picture.url %>
+        <%= image_tag @user.picture.url %>
       </div>
     </li>
     <li class="center">
-      <%= link_to current_user.name, user_path(current_user) %>
+      <%= link_to @user.name, user_path(@user) %>
     </li>
     <li class="center">
       <div class="stats">
@@ -45,5 +45,4 @@
       </div>
     </li>
   </ul>
-  <%= link_to "登録情報を変更する", userinfo_change_new_path, class: "btn btn-primary center-block" %>
 </div>

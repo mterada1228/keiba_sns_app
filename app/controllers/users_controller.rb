@@ -23,6 +23,18 @@ class UsersController < ApplicationController
     @microposts = @user.microposts.where(activated: true).paginate(page: params[:page])
   end
   
+  # PATCH /users/id
+  def update
+    @user = User.find(params[:id])
+    if current_user?(@user)
+      @user.update_attributes(user_params)
+      flash[:info] = "会員情報を変更しました"
+      redirect_to user_path(@user)
+    else
+      redirect_to root_url
+    end
+  end
+  
   private
   
     # Userのstrong parameter(form入力可能なパラメータを定義)

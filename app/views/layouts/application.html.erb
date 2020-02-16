@@ -9,7 +9,9 @@
   <body>
     <div class="container">
      <div class="row"; width=100%;>
-      <% if logged_in? %>
+      <% if controller.controller_name == 'users' && controller.action_name == 'show' %>
+        <%= render 'layouts/sidebar_userpage' %>
+      <% elsif logged_in? %>
         <%= render 'layouts/sidebar_logged_in' %>
       <% else %>
         <%= render 'layouts/sidebar_logged_out' %>

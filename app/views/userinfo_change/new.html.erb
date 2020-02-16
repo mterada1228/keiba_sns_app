@@ -1,0 +1,17 @@
+<%= form_for(current_user, url: current_user) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+  
+  <%= f.submit "ユーザ情報を変更する", class: "btn btn-primary" %>
+  
+  <span class="picture">
+    <%= f.label "プロフィール画像", style: "margin-top:50px"%>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+
+<% end %>

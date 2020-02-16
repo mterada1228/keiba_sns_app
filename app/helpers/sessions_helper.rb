@@ -23,19 +23,9 @@ module SessionsHelper
     @current_user = nil
   end
   
-  # micropostの投稿モードに切り替える
-  def mode_micropost
-    session[:mode_micropost] = true
-  end
-  
-  # micropostの閲覧モードに切り替える
-  def mode_feed
-    session[:mode_micropost] = false
-  end
-  
-  # 投稿モードかどうかを返す
-  def posting_mode
-    @posting_mode = session[:mode_micropost]
+  # 渡されたユーザーがログイン済みユーザーであればtrueを返す
+  def current_user?(user)
+    user == current_user
   end
 
 end
