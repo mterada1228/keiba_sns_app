@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
   
+  # アクションの実行前にログイン状態かどうか確認する
+  before_action :logged_in_user, only: [:edit, :update, :index, :destroy, :following, :followers]
+  
   # GET /users/new (/signup)
   def new
     @user = User.new
+  end
+  
+  # GET /users
+  def index
+    @users = User.all
   end
   
   # POST /users
@@ -33,6 +41,22 @@ class UsersController < ApplicationController
     else
       redirect_to root_url
     end
+  end
+  
+  # GET /users/id/following
+  def following
+    @title = "フォロー中"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  # GET /users/id/followers
+  def followers
+    @title = "フォロワー"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
   
   private

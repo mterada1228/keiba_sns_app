@@ -8,24 +8,9 @@
     <li class="center">
       <%= link_to @user.name, user_path(@user) %>
     </li>
-    <li class="center">
-      <div class="stats">
-        <a href="#">
-          <strong id="following" class="stat">
-            <!-- TODO ログインユーザのフォロー数が表示できるように変更 -->
-            10
-          </strong>
-          フォロー
-        </a>
-        <a href="#">
-          <strong id="followers" class="stat">
-            <!-- TODO ログインユーザのフォロー数が表示できるように変更 -->
-            10
-          </strong>
-          フォロワー
-        </a>
-      </div>
-    </li>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
     <li class="center">
       <div class="stats">
         <p>

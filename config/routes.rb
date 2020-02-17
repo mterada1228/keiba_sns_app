@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'userinfo_change/new'
-
-  get 'userinfo_change/update'
-
-  get 'kaimes/create'
-
-  get 'kaimes/delete'
-
-  get 'mode_change/new'
-
   root 'static_pages#home'
+  
+  get 'userinfo_change/new'
+  get 'userinfo_change/update'
+  get 'kaimes/create'
+  get 'kaimes/delete'
+  get 'mode_change/new'
   
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -22,10 +18,16 @@ Rails.application.routes.draw do
   get '/change', to: 'mode_change#new'
   
   resources :menu, only: [:show]
-  resources :users
+  resources :users do
+    # GET /users/id/following, /users/id/followers の url へ route する
+    member do
+      get :following, :followers
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :kaimes, only: [:create, :delete]
   resources :userinfo_change, only: [:new]
+  resources :relationships,       only: [:create, :destroy]
   
 end

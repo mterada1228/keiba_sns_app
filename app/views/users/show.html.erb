@@ -1,3 +1,4 @@
+<%= render 'follow_form' if logged_in? %>
 <% if @user.microposts.any? %>
   <%= will_paginate @microposts %>
   <ol class="microposts">

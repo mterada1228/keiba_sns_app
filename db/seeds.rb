@@ -21,6 +21,14 @@ User.create!(name:  "test3",
              password:              "aaaaaa",
              password_confirmation: "aaaaaa")
 
+# リレーションシップ
+users = User.all
+user  = users.first
+user.follow(users[1])
+user.follow(users[2])
+users[1].follow(user)
+users[2].follow(user)
+
 # 開発環境むけにRaceを生成
 menus = Menu.all
 
