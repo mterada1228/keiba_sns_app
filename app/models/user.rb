@@ -2,6 +2,7 @@ class User < ApplicationRecord
   
   # 依存関係
   has_many :microposts, dependent: :destroy
+  
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -10,6 +11,9 @@ class User < ApplicationRecord
                                    dependent:   :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  
+  has_many :favorites
+  has_many :favorite_microposts, through: :favorites, source: :micropost
   
   # バリデーション
   validates :name, presence: true, length: { maximum: 50 }
@@ -41,6 +45,21 @@ class User < ApplicationRecord
   # 現在のユーザーがフォローしてたらtrueを返す
   def following?(other_user)
     following.include?(other_user)
+  end
+  
+  # 投稿をお気に入りにする
+  def favorite(micropost)
+    favorite_microposts << micropost
+  end
+
+  # 投稿のお気に入りを解除する
+  def unfavorite(micropost)
+    favorites.find_by(micropost: micropost.id).destroy
+  end
+
+  # 現在のユーザーが投稿をお気に入りにしてたらtrueを返す
+  def favorite?(micropost)
+    favorite_microposts.include?(micropost)
   end
   
   # ユーザの検索

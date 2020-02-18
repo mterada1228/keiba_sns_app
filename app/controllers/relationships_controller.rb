@@ -2,14 +2,14 @@ class RelationshipsController < ApplicationController
 
   before_action :logged_in_user # ログイン済みかどうかを確認する
 
-  # POST /relasionships/id   
+  # POST /users/id/relasionships
   def create
     user = User.find(params[:followed_id])
     current_user.follow(user)
     redirect_to user
   end
 
-  # DELETE /relasionships/id
+  # DELETE /users/id/relasionships
   def destroy
     user = Relationship.find(params[:id]).followed
     current_user.unfollow(user)
