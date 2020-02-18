@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   # ユーザーのログインを確認する
   def logged_in_user
     unless logged_in?
-      store_location
       flash[:danger] = "このサービスの利用にはログインが必要です"
       redirect_to login_url
     end
