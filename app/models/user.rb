@@ -43,6 +43,15 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
   
+  # ユーザの検索
+  def self.search(name)
+    if name
+      where(['name LIKE ?', "%#{name}%"])
+    else
+      all
+    end
+  end
+  
   private
 
     # emailを小文字にする
