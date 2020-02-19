@@ -5,26 +5,34 @@ class FavoritesController < ApplicationController
   # POST /fovorites   
   def create
     
-    micropost = Micropost.find(params[:micropost_id])
-    current_user.favorite(micropost)
+    @micropost = Micropost.find(params[:micropost_id])
+    current_user.favorite(@micropost)
     
     # お気に入りしたMicropostのMenuページに遷移する
-    race = micropost.race
+    race = @micropost.race
     menu = race.menu
-    redirect_to menu_path(menu, course_name: race.place, round: race.round)
+    
+    respond_to do |format|
+      format.html { redirect_to menu_path(menu, course_name: race.place, round: race.round) }
+      format.js
+    end
     
   end
 
   # DELETE /fovorites
   def destroy
 
-    micropost = Favorite.find(params[:id]).micropost
-    current_user.unfavorite(micropost)
+    @micropost = Favorite.find(params[:id]).micropost
+    current_user.unfavorite(@micropost)
     
     # お気に入りしたMicropostのMenuページに遷移する
-    race = micropost.race
+    race = @micropost.race
     menu = race.menu
-    redirect_to menu_path(menu, course_name: race.place, round: race.round)
+    
+    respond_to do |format|
+      format.html { redirect_to menu_path(menu, course_name: race.place, round: race.round) }
+      format.js
+    end
 
   end
 

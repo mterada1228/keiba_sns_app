@@ -66,5 +66,10 @@
 </div>
 
 <!-- マイクロポスト表示 -->
-<%= render 'mode_feeding' %>
+<% if @race.microposts.any? %>
+  <%= will_paginate @microposts %>
+  <ol class="microposts">
+    <%= render @microposts %>
+  </ol>
+<% end %>
 
