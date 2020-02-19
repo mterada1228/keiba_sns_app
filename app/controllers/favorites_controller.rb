@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   
   before_action :logged_in_user # ログイン済みかどうかを確認する
 
-  # POST /fovorites   
+  # POST /favorites   
   def create
     
     @micropost = Micropost.find(params[:micropost_id])
@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
     
   end
 
-  # DELETE /fovorites
+  # DELETE /favorites
   def destroy
 
     @micropost = Favorite.find(params[:id]).micropost

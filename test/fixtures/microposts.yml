@@ -3,9 +3,9 @@
 one:
   content: MyText
   user: one
-  race: 
+  race: race_1
 
 two:
   content: MyText
   user: two
-  race: 
+  race: race_1
