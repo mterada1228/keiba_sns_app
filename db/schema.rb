@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200218125001) do
+ActiveRecord::Schema.define(version: 20200219232714) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20200218125001) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "activated", default: false
+    t.integer "favorites_count", default: 0, null: false
     t.index ["race_id"], name: "index_microposts_on_race_id"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end

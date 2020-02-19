@@ -7,6 +7,7 @@ class FavoritesController < ApplicationController
     
     @micropost = Micropost.find(params[:micropost_id])
     current_user.favorite(@micropost)
+    @micropost.reload
     
     # お気に入りしたMicropostのMenuページに遷移する
     race = @micropost.race
@@ -24,6 +25,7 @@ class FavoritesController < ApplicationController
 
     @micropost = Favorite.find(params[:id]).micropost
     current_user.unfavorite(@micropost)
+    @micropost.reload
     
     # お気に入りしたMicropostのMenuページに遷移する
     race = @micropost.race

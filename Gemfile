@@ -17,6 +17,7 @@ gem 'jquery-turbolinks'
 gem 'turbolinks',              '5.0.1'
 gem 'jbuilder',                '2.7.0'
 gem 'rails-i18n' # 日本語化するパッチ
+gem 'counter_culture', '~> 1.8' # カウンタ
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
