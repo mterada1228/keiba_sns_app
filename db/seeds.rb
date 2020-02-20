@@ -170,3 +170,24 @@ microposts.each { |micropost| micropost.build_hosemark(
   hose3_mark: '◯',
   hose5_mark: '▲'
 ).save }
+
+# 買い目を生成
+microposts = Micropost.all
+
+microposts.each do |micropost| 
+  micropost.kaimes.build(baken_type: '単勝', first_hoses: '1', betting: '100').save
+  micropost.kaimes.build(baken_type: '馬連', buy_type: 'ながし', first_hoses: '1', second_hoses: '2, 3', betting: '100').save
+  micropost.kaimes.build(baken_type: '三連単', buy_type: 'ながし', first_hoses: '1', second_hoses: '2, 3', third_hoses: '2, 3', betting: '100').save
+end
+
+# リプライを生成
+
+user  = users.first
+race = Race.first
+reply_mic =  user.microposts.create!(content: "リプライコメントです", race_id: race.id, activated: true)
+replied_posts = Micropost.all
+
+replied_posts.each do |replied_post|
+  replied_post.replied(reply_mic)
+end
+

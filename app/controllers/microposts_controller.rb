@@ -49,6 +49,7 @@ class MicropostsController < ApplicationController
   # GET /microposts/id/detail
   def detail
     @micropost = Micropost.find(params[:id])
+    @microposts = @micropost.reply_posts
     render 'show_detail'
   end
   

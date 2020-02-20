@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :kaimes, only: [:create, :delete]
   resources :userinfo_change, only: [:new]
   resources :relationships,       only: [:create, :destroy]
+  resources :reply_relationships,       only: [:create]
   resources :favorites, only: [:create, :destroy]
   
 end

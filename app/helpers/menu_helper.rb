@@ -2,6 +2,9 @@ module MenuHelper
   
   # 馬印表示用のテーブルを作成する
   def create_hose_mark_tab(micropost)
+    
+    return [] if micropost.hosemark.nil?
+    
     hose_mark = micropost.hosemark
     race = micropost.race
 

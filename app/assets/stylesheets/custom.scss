@@ -255,11 +255,6 @@ input {
       padding: 5px 0;
     }
   }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
   .gravatar {
     float: left;
     margin-right: 10px;
@@ -382,5 +377,24 @@ tr.gate_pink td {
   background-color: #FFF;
   display: none; 
   z-index: 3  /* 「オーバーレのHTML要素」よりもスタックレベルを高くする */
+}
+
+/* micropost detail */
+
+.kaime {
+  text-align: right;
+  font-weight: bold;
+  display: block;
+}
+
+.timestamp {
+  color: $gray-light;
+  display: block;
+  margin-left: 60px;
+  text-align: right;
+}
+
+.favorite {
+  text-align: right;
 }
 
