@@ -18,14 +18,23 @@ Rails.application.routes.draw do
   get '/change', to: 'mode_change#new'
   
   resources :menu, only: [:show]
+  
   resources :users do
     # GET /users/id/following, /users/id/followers の url へ route する
     member do
       get :following, :followers
     end
   end
+  
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts
+  
+  resources :microposts do
+    member do
+      # GET /microposts/id/detail
+      get :detail
+    end
+  end
+  
   resources :kaimes, only: [:create, :delete]
   resources :userinfo_change, only: [:new]
   resources :relationships,       only: [:create, :destroy]

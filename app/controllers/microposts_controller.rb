@@ -1,7 +1,6 @@
 class MicropostsController < ApplicationController
   
   # GET /micropost/id
-  # TODO テストを記す
   def show
     @micropost = Micropost.find(params[:id])
     @micropost.build_hosemark
@@ -45,6 +44,12 @@ class MicropostsController < ApplicationController
     menu = race.menu
     redirect_to menu_path(menu, course_name: race.place, round: race.round)
 
+  end
+  
+  # GET /microposts/id/detail
+  def detail
+    @micropost = Micropost.find(params[:id])
+    render 'show_detail'
   end
   
   private
