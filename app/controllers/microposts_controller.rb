@@ -1,5 +1,8 @@
 class MicropostsController < ApplicationController
   
+  # update時のみ、投稿が空出ないか確認する
+  before_action :content_check, only: [:update]
+  
   # GET /micropost/id
   def show
     @micropost = Micropost.find(params[:id])
@@ -54,10 +57,19 @@ class MicropostsController < ApplicationController
   end
   
   private
+  
+    # 正しいユーザーかどうか確認
+    def content_check
+      if params[:micropost][:content].blank?
+        @micropost = Micropost.find(params[:id])
+        flash[:danger] = "投稿にはコメントの入力が必要です"
+        redirect_to(micropost_path(@micropost))
+      end
+    end
 
-  # strong parameter
-  def micropost_params
-    params.require(:micropost).permit(:content,
+    # strong parameter
+    def micropost_params
+      params.require(:micropost).permit(:content,
                                       :race_id,
                                       hosemark_attributes:[:id, 
                                       :hose1_mark,
@@ -78,6 +90,6 @@ class MicropostsController < ApplicationController
                                       :hose16_mark,
                                       :hose17_mark,
                                       :hose18_mark])
-  end
+    end
 
 end
