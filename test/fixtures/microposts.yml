@@ -2,10 +2,10 @@
 
 one:
   content: MyText
-  user: one
+  user: test1
   race: race_1
 
 two:
   content: MyText
-  user: two
+  user: test2
   race: race_1

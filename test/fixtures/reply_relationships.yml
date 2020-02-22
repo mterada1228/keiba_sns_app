@@ -1,9 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  reply_post_id: 1
-  replied_post_id: 1
-
-two:
-  reply_post_id: 1
-  replied_post_id: 1

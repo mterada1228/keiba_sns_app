@@ -58,6 +58,13 @@ class MicropostsController < ApplicationController
   
   # GET /microposts/id/reply
   def reply
+    
+    if current_user.nil?
+      flash[:info] = "投稿にはログインが必要です"
+      redirect_to login_path
+      return
+    end
+
     @micropost = Micropost.find(params[:id])
     render 'reply'
   end
