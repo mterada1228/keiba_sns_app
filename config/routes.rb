@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   
   resources :microposts do
     member do
-      # GET /microposts/id/detail
-      get :detail
+      # GET /microposts/id/detail, /microposts/id/reply
+      get :detail, :reply
     end
   end
   

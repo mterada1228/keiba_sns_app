@@ -1,0 +1,20 @@
+<!-- リプライ先の投稿 -->
+<%= render 'microposts/micropost_detail' %>
+
+<!-- リプライフォーム -->
+<%= form_for(@micropost.reply_relationships.build) do |f| %>
+  
+  <div class="col-xs-5">
+    <div class="profile">
+      <%= image_tag current_user.picture.url, width: "50", height: "50" %>
+      <span class="user"><%= current_user.name %></span>
+    </div>
+  </div>
+    
+  <div class="col-xs-7">
+    <div class="field"><%= f.text_area :content %></div>
+    <%= hidden_field_tag :replied_micropost_id, @micropost.id %>
+    <%= f.submit "コメントする", class: "btn btn-primary" %>
+  </div>
+
+<% end %>

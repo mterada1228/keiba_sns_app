@@ -56,6 +56,12 @@ class MicropostsController < ApplicationController
     render 'show_detail'
   end
   
+  # GET /microposts/id/reply
+  def reply
+    @micropost = Micropost.find(params[:id])
+    render 'reply'
+  end
+  
   private
   
     # 正しいユーザーかどうか確認
