@@ -24,7 +24,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "rootページにアクセスするとmenu/showにリダイレクトされる事" do
     get root_url
     follow_redirect!
-    assert_template 'menu/show'
+    assert_template 'menus/show'
   end
 
 end

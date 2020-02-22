@@ -1,6 +1,7 @@
 class Menu < ApplicationRecord
   
   has_many :races, dependent: :destroy
+  attr_accessor :selected_date
   
   # 開催日順にソートして一つ前のMenuを返す
   def previous

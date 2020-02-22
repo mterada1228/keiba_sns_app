@@ -1,4 +1,4 @@
-class MenuController < ApplicationController
+class MenusController < ApplicationController
 
   # GET /menu/id
   def show
@@ -21,6 +21,11 @@ class MenuController < ApplicationController
       @microposts = @race.microposts.where(activated: true).paginate(page: params[:page])
     end
 
+  end
+  
+  # GET /menus
+  def index
+    @menus = Menu.all.order("today_date DESC").paginate(page: params[:page])
   end
 
 end

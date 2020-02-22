@@ -16,7 +16,7 @@ class UserinfoChangeTest < ActionDispatch::IntegrationTest
     follow_redirect!
     follow_redirect!
     @user.reload
-    assert_template 'menu/show'
+    assert_template 'menus/show'
     assert_equal 'Michael Example', @user.name
     assert_equal 'michael@example.com', @user.email
     

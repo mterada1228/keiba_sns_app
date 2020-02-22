@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   
   get '/change', to: 'mode_change#new'
   
-  resources :menu, only: [:show]
+  resources :menus, only: [:show, :index]
   
   resources :users do
     # GET /users/id/following, /users/id/followers の url へ route する

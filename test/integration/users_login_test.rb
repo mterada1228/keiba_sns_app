@@ -13,7 +13,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     post login_path, params: { session: { email: "michael@example.com", password: "password" }}
     follow_redirect!
     follow_redirect!
-    assert_template 'menu/show'
+    assert_template 'menus/show'
     # sidebarがログイン済のものとなっているか？
     assert_match @user.name, response.body
     # headerがログイン済のものとなっているか？
@@ -23,7 +23,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     delete logout_path
     follow_redirect!
     follow_redirect!
-    assert_template 'menu/show'
+    assert_template 'menus/show'
     # sidebarがログアウト済のものとなっているか？
     assert_match "ゲストさん", response.body
     # headerがログイン済のものとなっているか？

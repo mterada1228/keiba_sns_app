@@ -1,0 +1,9 @@
+<h1> 開催日一覧 </h1>
+
+<!-- マイクロポスト表示 -->
+<% if @menus.any? %>
+  <%= will_paginate @menus %>
+  <ul class="menus">
+    <%= render @menus %>
+  </ul>
+<% end %>
