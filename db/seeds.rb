@@ -52,8 +52,8 @@ hose4_gate_number = 2
 hose4_gate_color = "black"
 hose4_number = 4
 
-# 11R分やる(東京)
-11.times do |n|
+# 4R分やる(東京)
+4.times do |n|
   place = "東京"
   round = n+1
   race_name = "レース_#{n+1}"
@@ -84,8 +84,8 @@ hose4_number = 4
     ) }
 end
 
-# 10R分やる(京都)
-10.times do |n|
+# 3R分やる(京都)
+3.times do |n|
   place = "京都"
   race_name = "レース_#{n+1}"
   round = n+1
@@ -116,8 +116,8 @@ end
     ) }
 end
 
-# 9R分やる(小倉)
-9.times do |n|
+# 2R分やる(小倉)
+2.times do |n|
   place = "小倉"
   round = n+1
   race_name = "レース_#{n+1}"
