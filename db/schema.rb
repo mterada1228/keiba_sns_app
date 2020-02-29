@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20200220222618) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "micropost_id"
+    t.bigint "user_id"
+    t.bigint "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["micropost_id"], name: "index_favorites_on_micropost_id"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20200220222618) do
     t.string "hose16_mark"
     t.string "hose17_mark"
     t.string "hose18_mark"
-    t.integer "micropost_id"
+    t.bigint "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["micropost_id"], name: "index_hosemarks_on_micropost_id"
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20200220222618) do
     t.string "second_hoses"
     t.string "third_hoses"
     t.integer "betting", default: 0
-    t.integer "micropost_id"
+    t.bigint "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["micropost_id"], name: "index_kaimes_on_micropost_id"
@@ -68,8 +71,8 @@ ActiveRecord::Schema.define(version: 20200220222618) do
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id"
-    t.integer "race_id"
+    t.bigint "user_id"
+    t.bigint "race_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "activated", default: false
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20200220222618) do
     t.string "race_name"
     t.string "cource_type"
     t.integer "cource_length"
-    t.integer "menu_id"
+    t.bigint "menu_id"
     t.string "hose1_name"
     t.integer "hose1_gate_number"
     t.string "hose1_gate_color"
@@ -195,4 +198,11 @@ ActiveRecord::Schema.define(version: 20200220222618) do
     t.string "picture"
   end
 
+  add_foreign_key "favorites", "microposts"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "hosemarks", "microposts"
+  add_foreign_key "kaimes", "microposts"
+  add_foreign_key "microposts", "races"
+  add_foreign_key "microposts", "users"
+  add_foreign_key "races", "menus"
 end
