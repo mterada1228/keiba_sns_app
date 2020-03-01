@@ -24,11 +24,9 @@ jobs:
       - *default_docker_ruby_executor
     steps:
       - checkout
-      # Which version of bundler?
       - run:
           name: Which bundler?
           command: bundle -v
-      # bundle cache
       - restore_cache:
           keys:
             - keiba-sns-app-{{ checksum "Gemfile.lock" }}
@@ -36,7 +34,6 @@ jobs:
       - run:
           name: Bundle Install
           command: bundle check || bundle install
-      # Store bundle cache
       - save_cache:
           key: keiba-sns-app-{{ checksum "Gemfile.lock" }}
           paths:
@@ -64,7 +61,7 @@ jobs:
       - run:
           command: |
             mkdir /tmp/test-results
-            TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            # TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             # bundle exec rspec $TESTFILES --profile 10 --format RspecJunitFormatter --out /tmp/test-results/rspec.xml --format progress
             bundle exec rails test
       - store_test_results:
