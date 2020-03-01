@@ -8,16 +8,15 @@ references:
       BUNDLE_RETRY: 3
       BUNDLE_PATH: vendor/bundle
       PGHOST: 127.0.0.1
-      PGUSER: circleci-demo-ruby
+      PGUSER: postgres
       PGPASSWORD: ""
       RAILS_ENV: test
   postgres: &postgres
     image: circleci/postgres:9.5-alpine
     environment:
-      POSTGRES_USER: circleci-demo-ruby
-      POSTGRES_DB: rails_blog_test
+      POSTGRES_USER: postgres
+      POSTGRES_DB: keiba_sns_app_test
       POSTGRES_PASSWORD: ""
-
 
 jobs:
   build:
@@ -32,29 +31,17 @@ jobs:
       # bundle cache
       - restore_cache:
           keys:
-            - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
-            - rails-demo-bundle-v2-
+            - keiba-sns-app-{{ checksum "Gemfile.lock" }}
+            - keiba-sns-app-
       - run:
           name: Bundle Install
           command: bundle check || bundle install
       # Store bundle cache
       - save_cache:
-          key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
+          key: keiba-sns-app-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      # Only necessary if app uses webpacker or yarn in some other way
-      - restore_cache:
-          keys:
-            - rails-demo-yarn-{{ checksum "yarn.lock" }}
-            - rails-demo-yarn-
-      - run:
-          name: Yarn Install
-          command: yarn install --cache-folder ~/.cache/yarn
-      # Store yarn / webpacker cache
-      - save_cache:
-          key: rails-demo-yarn-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+
   test:
     parallelism: 3
     docker:
@@ -64,15 +51,11 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
-            - rails-demo-bundle-v2-
+            - keiba-sns-app-{{ checksum "Gemfile.lock" }}
+            - keiba-sns-app-
       - run:
           name: Bundle Install
           command: bundle check || bundle install
-      - restore_cache:
-          keys:
-            - rails-demo-yarn-{{ checksum "yarn.lock" }}
-            - rails-demo-yarn-
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
