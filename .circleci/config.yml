@@ -43,7 +43,6 @@ jobs:
             - vendor/bundle
 
   test:
-    parallelism: 3
     docker:
       - *default_docker_ruby_executor
       - *postgres
