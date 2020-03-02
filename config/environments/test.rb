@@ -41,6 +41,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # STDOUT(標準出力)への書き出し
-  config.logger = Logger.new(STDOUT)
+  # config.logger = Logger.new(STDOUT)
 
 end
