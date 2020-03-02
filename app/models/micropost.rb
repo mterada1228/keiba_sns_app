@@ -3,8 +3,10 @@ class Micropost < ApplicationRecord
   # 各テーブルとの依存関係を定義する
   belongs_to :user, dependent: :destroy
   belongs_to :race, dependent: :destroy
-  has_one :hosemark
-  has_many :kaimes
+  has_one :hosemark, dependent: :destroy
+  has_many :kaimes, dependent: :destroy
+  has_many :favorite, dependent: :destroy
+
   accepts_nested_attributes_for :hosemark
   accepts_nested_attributes_for :kaimes
   

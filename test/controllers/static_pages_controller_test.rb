@@ -9,14 +9,14 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "本日に一番近い開催日のmenuページが取得できる（現在の日付より後の開催日がmenuにある時）" do
-    Menu.delete(@middle)
+    @middle.destroy
     get root_url
     assert_equal assigns(:menu), @latest
   end
   
   test "本日に一番近い開催日のmenuページが取得できる（現在の日付より後の開催日がmenuにない時）" do
-    Menu.delete(@latest)
-    Menu.delete(@middle)
+    @latest.destroy
+    @middle.destroy
     get root_url
     assert_equal assigns(:menu), @oldest
   end
