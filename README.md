@@ -71,12 +71,35 @@ http://18.177.202.110/
 
 ### 開発環境
 * docker
-  * アプリケーション： image : ruby:2.5.3
+  * アプリケーション : image : ruby:2.5.3
   * DB：image : postgres:10.6
 
 ### CI/CD環境
 * CircleCI
-  * github への push 時に自動ビルド & 自動テストの実施 
+  * github への push 時に自動ビルド & 自動テストの実施
 
+### アプリケーション内での使用技術
 
+* 使用言語
+  * ruby 2.5.3
 
+* 画像投稿 / 編集
+  * carrierwave 1.2.2
+  * mini_magick 4.7.0
+
+* ページネーション機能
+  * will_paginate 3.1.6
+
+* フレームワーク
+  * Rails 5.1.6
+  * bootstrap
+  * jquery
+
+* DB拡張
+  * counter_culture
+
+* デバッグ
+  * byebug
+
+* テスト
+  * minitest
