@@ -71,7 +71,7 @@ http://18.177.202.110/
 
 ### 開発環境
 * docker
-  * アプリケーション : image : ruby:2.5.3
+  * アプリケーション : image : ruby:2.5.3
   * DB：image : postgres:10.6
 
 ### CI/CD環境
