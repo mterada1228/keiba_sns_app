@@ -25,6 +25,10 @@ gem 'pg',  '0.20.0' # postgreSQL
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
