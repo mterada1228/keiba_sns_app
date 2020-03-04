@@ -10,7 +10,7 @@ set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
-set :deploy_to, '/var/www/rails/keiba_sns'
+set :deploy_to, '/var/www/rails/keiba_sns_app '
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -44,6 +44,7 @@ set :keep_releases, 5
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 
+# tasks
 namespace :deploy do
     desc 'Restart application'
     task :restart do
