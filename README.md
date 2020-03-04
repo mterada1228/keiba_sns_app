@@ -20,27 +20,21 @@ http://18.177.202.110/
 3. docker-compose exec web bundle exec rails db:create (# 初回のみ実行)
 4. docker-compose exec web bundle exec rails db:migrate
 5. docker-compose exec web bundle exec rails db:seed
-6. ブラウザより、http://localhost:3000/にアクセス
+6. ブラウザより、[http://localhost:3000/](http://localhost:3000/) にアクセス
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 機能説明
 
-Things you may want to cover:
+### レース選択
+予想の閲覧、投稿したいレースの選択を行います。
+開催日を選択し、希望の競馬場名を選択、最後にレースのラウンド数を選択してください。
 
-* Ruby version
+### 予想の投稿
+予想したいレースの選択をしたら、「レースを予想する」ボタンを選択してください。予想の投稿画面が開きます。
+予想は「馬印」、「買い目」、「予想コメント」を投稿することができます。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 馬印
+ * 画面左側にレースに出走する馬の一覧が表示されます。各馬について「◎（本命）、◯（対抗）、▲、△（連穴）、×（大穴）」の評価を入力してください。
+* 買い目
+ * このレースにおける買い目を投稿できます。「買い目を選択」ボタンを押すと券種・買い方を選択することができます。選択すると出走馬の一覧から軸、相手を選択することで予想に買い目を登録することができます。
+* 予想コメント
+ * フリーフォーマットで予想を投稿することができます。調教内容や前走の評価など、予想の理由を自由に投稿できます。
