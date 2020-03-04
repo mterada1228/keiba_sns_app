@@ -25,6 +25,7 @@
 
 # settings files
 /.env
+/shared/config/settings.yml
 
 # アップロードされたテスト画像を無視する
 /public/uploads
