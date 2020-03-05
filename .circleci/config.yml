@@ -72,10 +72,11 @@ jobs:
     docker:
       - *default_docker_ruby_executor
     steps:
+      - checkout
       - restore_cache:
-        keys:
-          - keiba-sns-app-{{ checksum "Gemfile.lock" }}
-          - keiba-sns-app-
+          keys:
+            - keiba-sns-app-{{ checksum "Gemfile.lock" }}
+            - keiba-sns-app-
       - run:
           name: Bundle Install
           command: bundle check || bundle install
