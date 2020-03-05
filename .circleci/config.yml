@@ -81,7 +81,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" != "master" ]; then
               exit 0
             fi
-            bundle exec cap production deploy
+            bundle exec cap --trace production deploy
 
 workflows:
   version: 2
