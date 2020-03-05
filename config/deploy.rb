@@ -42,7 +42,7 @@ set :log_level, :debug
 set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
-# set :ssh_options, verify_host_key: :secure
+set :ssh_options, auth_methods: ['publickey'], keys: ['~/.ssh/id_rsa_circleci.pub']
 
 # tasks
 namespace :deploy do
