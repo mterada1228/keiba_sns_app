@@ -71,7 +71,14 @@ jobs:
   deploy:
     docker:
       - *default_docker_ruby_executor
-    steps:    
+    steps:
+      - restore_cache:
+        keys:
+          - keiba-sns-app-{{ checksum "Gemfile.lock" }}
+          - keiba-sns-app-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
       - add_ssh_keys:
           fingerprints:
             - "62:63:13:2e:f6:22:78:1a:a4:99:8b:d0:a7:5a:9e:e3"
