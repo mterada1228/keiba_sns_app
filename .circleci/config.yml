@@ -82,7 +82,7 @@ jobs:
           command: bundle check || bundle install
       - add_ssh_keys:
           fingerprints:
-            - "62:63:13:2e:f6:22:78:1a:a4:99:8b:d0:a7:5a:9e:e3"
+            - "3b:83:c4:88:58:fc:81:5f:87:64:00:b7:58:94:57:39"
       - deploy:
           name: Capistrano deploy
           command: |
