@@ -34,7 +34,14 @@
     </tbody>
   </table>
   <%= k.label "購入金額" %>
-  <%= k.text_field :betting, class: 'form-control' %> 円
+  <div class="row">
+    <div class="col-xs-11">
+      <%= k.text_field :betting, class: 'form-control', style: "display: inline" %>
+    </div>
+    <div class="col-xs-1">
+      円
+    </div>
+  </div>
   <%= hidden_field_tag :micropost_id, @micropost.id %>
   <%= hidden_field_tag :baken_type, baken_type %>
   <%= hidden_field_tag :buy_type, "ながし" %>
