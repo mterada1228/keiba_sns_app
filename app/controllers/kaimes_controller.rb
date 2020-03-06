@@ -13,7 +13,12 @@ class KaimesController < ApplicationController
     @micropost = Micropost.find(params[:micropost_id])
     
     @kaime.save
-    redirect_to micropost_path(@micropost)
+    @micropost.reload
+
+    respond_to do |format|
+      format.html { redirect_to micropost_path(@micropost) }
+      format.js
+    end
 
   end
 
