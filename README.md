@@ -9,7 +9,7 @@
 ## アプリの実施方法
 
 ### 本番環境のURL
-http://http://app.umatterkeiba.com/
+http://app.umatterkeiba.com/
 
 ### 開発環境での実行方法
 
