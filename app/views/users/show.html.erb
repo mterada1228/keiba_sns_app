@@ -1,29 +1,46 @@
 <%= render 'follow_form' if logged_in? %>
 <% if @user.microposts.any? %>
   <%= will_paginate @microposts %>
-  <ol class="microposts">
     <% @microposts.each do |micropost| %>
-      <li id="micropost-<%= micropost.id %>">
-        <h2><%= micropost.race.menu.today_date.strftime("%Y年 %-m月 %-d日") %> <%= micropost.race.place %> <%= micropost.race.round %>R <%= micropost.race.race_name %></h2>
-        <div class="row">
-          <div class="col-xs-5">
+      <ol class="microposts" style="border-bottom: single 10px #0000ff;">
+      <h2><%= micropost.race.menu.today_date.strftime("%Y年 %-m月 %-d日") %> <%= micropost.race.place %> <%= micropost.race.round %>R <%= micropost.race.race_name %></h2>
+      <div class="row" id="micropost-<%= micropost.id %>">
+        <div class="col-xs-5">  
+          <div class="hosemark">
             <ol style="list-style-type: none;">
-              <% create_hose_mark_tab(micropost).each do |hose| %>
-                <% if !hose[:hose_mark].blank? %>
-                  <li> <%= hose[:hose_mark] %> <%= hose[:name] %> </li>
-                <% end %>
+            <% create_hose_mark_tab(micropost).each do |hose| %>
+              <% if !hose[:hose_mark].blank? %>
+                <li> <%= hose[:hose_mark] %> <%= hose[:name] %> </li>
               <% end %>
+            <% end %>
             </ol>
           </div>
-          <div class="col-xs-7">
-            <span class="content"><%= micropost.content %></span>
-            <span class="timestamp">
-              <%= time_ago_in_words(micropost.created_at) %> 前
-            </span>
-            <%= render 'users/favorite_form', micropost: micropost if logged_in? %>
+        </div>
+
+        <div class="col-xs-7">  
+          <div class="kaime">
+            <ol style="list-style-type: none;">
+            <% micropost.kaimes.each do |kaime| %>
+              <% if !kaime[:baken_type].blank? %>
+                <% if kaime.second_hoses.nil? && kaime.third_hoses.nil? %>
+                  <span> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> <%= kaime.betting %>円 </span> </br>
+                <% elsif kaime.third_hoses.nil? %>
+                 <span> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> - <%= kaime.second_hoses %> <%= kaime.betting %>円 </span> </br>
+                <% else %>
+                 <span> <%= kaime.baken_type %> <%= kaime.buy_type %> : <%= kaime.first_hoses %> - <%= kaime.second_hoses %> - <%= kaime.third_hoses %> <%= kaime.betting %>円 </span> </br>
+                <% end %>
+              <% end %>
+            <% end %>
+            </ol>
+          </div>
+    
+          <div class="content"><%= micropost.content %></div>
+          <div class="favorite"><%= render 'users/favorite_form', micropost: micropost if logged_in? %></div>
+          <div class="timestamp">
+            <%= time_ago_in_words(micropost.created_at) %> 前
           </div>
         </div>
-      </li>
+      </div>
+      </ol>
     <% end %>
-  </ol>
-<% end %>
+  <% end %>

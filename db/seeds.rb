@@ -1,12 +1,10 @@
 # 開発環境向けにMenuを生成
 
-Menu.create!(today_date: '2019-12-30')
-Menu.create!(today_date: '2019-12-31')
-Menu.create!(today_date: '2020-01-01')
-Menu.create!(today_date: '2020-01-02')
+Menu.create!(today_date: '2019-12-21')
+Menu.create!(today_date: '2019-12-22')
 
 # 開発機向けにユーザを生成
-User.create!(name:  "test1",
+User.create!(name:  "",
              email: "test1@co.jp",
              password:              "aaaaaa",
              password_confirmation: "aaaaaa")
