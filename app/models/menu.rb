@@ -20,7 +20,7 @@ class Menu < ApplicationRecord
   
   # 当日の引数で与えられた場名のレース一覧を取得する
   def today_selected_course_race(course_name)
-    self.races.where(place: course_name)
+    self.races.where(place: course_name).order("round ASC")
   end
 
   # 当日の引数で与えられた場名、ラウンドのレースを取得する
