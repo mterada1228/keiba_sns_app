@@ -42,7 +42,7 @@ server '18.177.202.110', user: 'masaru', roles: %w{app db web}
 # --------------
 set :ssh_options, {
     keys: %w(~/.ssh/id_rsa_circleci),
-    forward_agent: false,
+    forward_agent: true,
     auth_methods: %w(publickey)
 }
 
