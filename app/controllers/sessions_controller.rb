@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
   
   # GET /login
   def new
+    # ポートフォリオ用
+    flash[:info] = "サンプルユーザとしてこちらでログインできます。
+    メールアドレス：mterada1228@gmail.com、
+    パスワード：aaaaaa"
   end
   
   # POST /login
