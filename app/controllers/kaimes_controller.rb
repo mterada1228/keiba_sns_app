@@ -1,9 +1,7 @@
 class KaimesController < ApplicationController
 
-  # POST /kaimes
+  # POST /kaimes/id
   def create
-    
-    # TODO 買い目投稿した時に、入力途中の馬印とコメントが消えないようにする
     
     @kaime = Kaime.new(kaime_params)
     @kaime.micropost_id = params[:micropost_id]
@@ -19,10 +17,17 @@ class KaimesController < ApplicationController
       format.html { redirect_to micropost_path(@micropost) }
       format.js
     end
-
   end
 
-  def delete
+  # DELETE /kaime/id
+  def destroy
+    Kaime.find(params[:id]).destroy
+    @micropost = Micropost.find(params[:micropost_id])
+    @micropost.reload
+    respond_to do |format|
+      format.html { redirect_to micropost_path(@micropost) }
+      format.js
+    end
   end
   
   private

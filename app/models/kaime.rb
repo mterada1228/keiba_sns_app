@@ -1,5 +1,5 @@
 class Kaime < ApplicationRecord
-  belongs_to :micropost, dependent: :destroy
+  belongs_to :micropost
   before_save do
     # チェックボックスの保存前に不要な文字をトリム
     self.first_hoses.gsub!(/[\[\]\"]/, "") if attribute_present?("first_hoses")
