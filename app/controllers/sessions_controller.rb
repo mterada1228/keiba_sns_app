@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     flash.now[:info] = "サンプルユーザとしてこちらでログインできます。
     メールアドレス：mterada1228@gmail.com、
     パスワード：aaaaaa"
-    redirect_to 'new'
   end
   
   # POST /login
