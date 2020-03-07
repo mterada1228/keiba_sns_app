@@ -13,7 +13,7 @@ class MenuMicropostTest < ActionDispatch::IntegrationTest
     post microposts_path, params: { micropost: {race_id: @race.id} }
     follow_redirect!
     assert_template 'sessions/new'
-    assert_not flash.empty?
+    # assert_not flash.empty? # ポートフォリオ用にサンプルユーザの情報をflashで出現させるためコメントアウト
     
     # ログイン状態であれば投稿画面に遷移できる事
     log_in_as(@user)
