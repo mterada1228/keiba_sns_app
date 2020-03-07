@@ -32,7 +32,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-set :rbenv_ruby, '2.5.3'
+set :rbenv_ruby, '2.6.3'
 set :log_level, :debug
 
 # Default value for local_user is ENV['USER']
