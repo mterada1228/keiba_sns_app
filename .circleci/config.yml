@@ -85,11 +85,7 @@ jobs:
             - "3b:83:c4:88:58:fc:81:5f:87:64:00:b7:58:94:57:39"
       - deploy:
           name: Capistrano deploy
-          command: |
-# if [ "${CIRCLE_BRANCH}" != "master" ]; then
-              # exit 0
-              # fi
-            bundle exec cap --trace production deploy
+          command: bundle exec cap --trace production deploy
 
 workflows:
   version: 2
