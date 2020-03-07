@@ -69,8 +69,7 @@ jobs:
           destination: test-results
 
   deploy:
-    docker:
-      - *default_docker_ruby_executor
+    machine: true
     steps:
       - checkout
       - restore_cache:
