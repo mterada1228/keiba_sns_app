@@ -46,7 +46,7 @@ server '18.177.202.110', user: 'masaru', roles: %w{app db web}
 #    forward_agent: false,
 #    auth_methods: %w(password)
 #  }
-    set :ssh_options, keys: '~/.ssh/keibaSNS_key_rsa'
+    set :ssh_options, keys: '~/.ssh/id_rsa_circleci'
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
