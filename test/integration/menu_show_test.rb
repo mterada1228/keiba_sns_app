@@ -16,17 +16,16 @@ class MenuShowTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", root_path
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", signup_path
-    # TODO 会員検索を実装したらテストを書く
+    assert_select "a[href=?]", users_path
   end
   
   test "開催日エリアのテスト" do
     get menu_path(@middle)
-    # TODO カレンダを実装したらテストを書く
     assert_select "a[href=?]", menu_path(@oldest)
     assert_select "a[href=?]", menu_path(@latest)
   end
   
-  test "raundエリアのテスト" do
+  test "roundエリアのテスト" do
     get menu_path(@middle)
     assert_select "div#race_round"
   end
@@ -36,6 +35,10 @@ class MenuShowTest < ActionDispatch::IntegrationTest
     assert_match @middle.races.first.race_name, response.body
     assert_match @middle.races.first.cource_type, response.body
     assert_match @middle.races.first.cource_length.to_s, response.body
+  end
+
+  test "マイクロポスト表示のテスト" do
+    
   end
 
 end
