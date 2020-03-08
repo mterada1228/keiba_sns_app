@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200220222618) do
+ActiveRecord::Schema.define(version: 20200308014731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20200220222618) do
     t.bigint "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "hitting"
     t.index ["micropost_id"], name: "index_kaimes_on_micropost_id"
   end
 
@@ -162,6 +163,9 @@ ActiveRecord::Schema.define(version: 20200220222618) do
     t.string "hose18_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_hose_num"
+    t.string "second_hose_num"
+    t.string "third_hose_num"
     t.index ["menu_id"], name: "index_races_on_menu_id"
   end
 

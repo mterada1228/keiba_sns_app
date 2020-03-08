@@ -3,6 +3,13 @@
 Menu.create!(today_date: '2019-12-21')
 Menu.create!(today_date: '2019-12-22')
 
+# 管理者として登録を実施する
+User.create!(name:  "寺田優(管理者)",
+  email: "mterada1228@gmail.com",
+  password:              "aaaaaa",
+  password_confirmation: "aaaaaa",
+  admin: true)
+
 # 開発機向けにユーザを生成
 User.create!(name:  Faker::Name.name,
              email: "test1@co.jp",

@@ -40,5 +40,6 @@ Rails.application.routes.draw do
   resources :relationships,       only: [:create, :destroy]
   resources :reply_relationships,       only: [:create]
   resources :favorites, only: [:create, :destroy]
+  resources :admins
   
 end
