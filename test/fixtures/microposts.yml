@@ -1,11 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+hitting:
+  content: hitting
+  user: test1
+  race: race_1
+  activated: true
+
+not_hitting:
+  content: not hitting
+  user: test2
+  race: race_2
+  activated: true
+
 one:
   content: MyText
   user: test1
   race: race_1
+  activated: true
 
 two:
   content: MyText
   user: test2
   race: race_1
+  activated: true
