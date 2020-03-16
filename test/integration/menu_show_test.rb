@@ -38,6 +38,7 @@ class MenuShowTest < ActionDispatch::IntegrationTest
   end
 
   test "マイクロポスト表示のテスト" do
+  
     # このレースには的中している買い目がある
     get menu_path(@latest, course_name: "東京", round: 1)
     # 的中している馬券があること

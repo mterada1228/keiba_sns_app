@@ -2,9 +2,9 @@ class Kaime < ApplicationRecord
   belongs_to :micropost
   before_save do
     # チェックボックスの保存前に不要な文字をトリム
-    self.first_hoses.gsub!(/[\[\]\"]/, "") if attribute_present?("first_hoses")
-    self.second_hoses.gsub!(/[\[\]\"]/, "") if attribute_present?("second_hoses")
-    self.third_hoses.gsub!(/[\[\]\"]/, "") if attribute_present?("third_hoses")
+    self.first_hoses.gsub!(/[\[\]\"" "]/, "") if attribute_present?("first_hoses")
+    self.second_hoses.gsub!(/[\[\]\"" "]/, "") if attribute_present?("second_hoses")
+    self.third_hoses.gsub!(/[\[\]\"" "]/, "") if attribute_present?("third_hoses")
     trim_duplicate # 重複している買い目を除去
     check_nothing # 買い目が一つも無ければ保存しない
   end

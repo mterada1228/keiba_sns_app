@@ -35,11 +35,17 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :admins do
+    collection do
+      get 'update_hitting'
+    end
+  end
+
   resources :kaimes, only: [:create, :destroy]
   resources :userinfo_change, only: [:new]
   resources :relationships,       only: [:create, :destroy]
   resources :reply_relationships,       only: [:create]
   resources :favorites, only: [:create, :destroy]
-  resources :admins
+  
   
 end
