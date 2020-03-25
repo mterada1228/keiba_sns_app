@@ -16,6 +16,7 @@ class AdminsController < ApplicationController
             race.microposts.each do |microposts|
                 microposts.kaimes.each do |kaime|
                     kaime.update_attributes(hitting: check_hitting(race, kaime))
+                end
             end
         end
 
@@ -31,15 +32,13 @@ class AdminsController < ApplicationController
             if kaime.baken_type == "単勝"
                 return true if kaime.first_hoses == race.first_hose_num
             end
-
+            
             if kaime.baken_type == "複勝"
-                return true if kaime.first_hoses.in?([race.first_hose_num,
-                                                        race.second_hose_num, 
-                                                        race.third_hose_num])
+                return true if kaime.first_hoses.in?([race.first_hose_num, race.second_hose_num, race.third_hose_num])
             end
             
             if kaime.baken_type == "馬連"
-                kaime.first_hoses.first_hoses.split(',').each do |first_hose|
+                kaime.first_hoses.split(',').each do |first_hose|
                     if first_hose.in?([race.first_hose_num, race.second_hose_num])
                         kaime.second_hoses.split(',').each do |second_hose|
                             return true if second_hose.in?([race.first_hose_num, race.second_hose_num])
@@ -49,12 +48,11 @@ class AdminsController < ApplicationController
             end
 
             if kaime.baken_type == "馬単"
-                return true if race.first_hose_num.in?(kaime.first_hoses.split(',')) 
-                                && race.second_hose_num.in?(kaime.second_hoses.sprit(',')) 
+                return true if race.first_hose_num.in?(kaime.first_hoses.split(',')) && race.second_hose_num.in?(kaime.second_hoses.sprit(',')) 
             end
 
             if kaime.baken_type == "ワイド"
-                kaime.first_hoses.first_hoses.split(',').each do |first_hose|
+                kaime.first_hoses.split(',').each do |first_hose|
                     if first_hose.in?([race.first_hose_num, race.second_hose_num, race.third_hose_num])
                         kaime.second_hoses.split(',').each do |second_hose|
                             return true if second_hose.in?([race.first_hose_num, race.second_hose_num, race.third_hose_num])
@@ -64,7 +62,7 @@ class AdminsController < ApplicationController
             end
 
             if kaime.baken_type == "三連複"
-                kaime.first_hoses.first_hoses.split(',').each do |first_hose|
+                kaime.first_hoses.split(',').each do |first_hose|
                     if first_hose.in?([race.first_hose_num, race.second_hose_num, race.third_hose_num])
                         kaime.second_hoses.split(',').each do |second_hose|
                             if second_hose.in?([race.first_hose_num, race.second_hose_num, race.third_hose_num])
@@ -78,11 +76,9 @@ class AdminsController < ApplicationController
             end
 
             if kaime.baken_type == "三連単"
-                return true if race.first_hose_num.in?(kaime.first_hoses.split(',')) 
-                                && race.second_hose_num.in?(kaime.second_hoses.sprit(',')) 
-                                && race.third_hose_num.in?(kaime.third_hoses.sprit(',')) 
+                return true if race.first_hose_num.in?(kaime.first_hoses.split(',')) && race.second_hose_num.in?(kaime.second_hoses.sprit(',')) && race.third_hose_num.in?(kaime.third_hoses.sprit(',')) 
             end
-            
+
         end
 
 end
