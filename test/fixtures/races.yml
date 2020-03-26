@@ -119,4 +119,14 @@ race_15:
   cource_type: "芝"
   cource_length: "1600"
   menu: oldest
-  
+
+race_kaime_hitting:
+  place: "京都"
+  round: 3
+  race_name: "テスト3"
+  cource_type: "芝"
+  cource_length: "1600"
+  menu: oldest
+  first_hose_num: 1
+  second_hose_num: 2
+  third_hose_num: 3

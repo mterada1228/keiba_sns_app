@@ -37,3 +37,12 @@ two:
   third_hoses: MyString
   betting: 1
   micropost: 
+
+tansho_hitting:
+  baken_type: tansho
+  buy_type: 
+  first_hoses: 1
+  second_hoses: 
+  third_hoses:
+  betting: 1
+  micropost: micropost_hitting

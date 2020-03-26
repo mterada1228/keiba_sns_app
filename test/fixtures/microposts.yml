@@ -23,3 +23,9 @@ two:
   user: test2
   race: race_1
   activated: true
+
+micropost_hitting:
+  content: MyText
+  user: test2
+  race: race_kaime_hitting
+  activated: true
